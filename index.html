@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeEstates | Premium Real Estate Agency</title>
+    <style>
+        /* Base Reset & Smooth Scroll */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        html {
+            scroll-behavior: smooth; /* Enables smooth scrolling to sections */
+        }
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        /* Sticky Header Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1a365d;
+        }
+        .logo span {
+            color: #3182ce;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #3182ce;
+        }
+
+        /* Section Layouts */
+        section {
+            padding: 100px 2rem 80px; /* Top padding accounts for sticky header */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-size: 2.5rem;
+            color: #1a365d;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .section-desc {
+            color: #718096;
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        /* Hero Section */
+        #home {
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), url('https://unsplash.com') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            width: 100%;
+            max-width: 100%;
+        }
+        #home h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        #home p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #3182ce;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2b6cb0;
+        }
+
+        /* Properties Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .card-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        .card-content {
+            padding: 1.5rem;
+        }
+        .price {
+            color: #3182ce;
+            font-weight: bold;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* About & Services Layout */
+        .text-content {
+            max-width: 800px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+
+        /* Contact Form */
+        form {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        form .btn {
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a365d;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 50px;
+        }
+
+        /* Responsive Breakpoint */
+        @media (max-width: 768px) {
+            nav ul { gap: 1rem; }
+            #home h1 { font-size: 2.5rem; }
+            section { padding-top: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Prime<span>Estates</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#properties">Properties</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home / Hero Section -->
+    <section id="home">
+        <h1>Find Your Dream Home</h1>
+        <p>We connect buyers and sellers with premium luxury properties across prime metropolitan locations.</p>
+        <a href="#properties" class="btn">View Listings</a>
+    </section>
+
+    <!-- Properties Section -->
+    <section id="properties">
+        <h2>Featured Properties</h2>
+        <p class="section-desc">Handpicked residential spaces tailored for modern lifestyle comforts.</p>
+        <div class="grid">
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://unsplash.com');"></div>
+                <div class="card-content">
+                    <div class="price">$1,250,000</div>
+                    <h3>Skyline Modern Villa</h3>
+                    <p>4 Beds • 3 Baths • 3,200 sqft</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://unsplash.com');"></div>
+                <div class="card-content">
+                    <div class="price">$890,000</div>
+                    <h3>The Urban Penthouse</h3>
+                    <p>3 Beds • 2 Baths • 2,100 sqft</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://unsplash.com');"></div>
+                <div class="card-content">
+                    <div class="price">$2,100,000</div>
+                    <h3>Sunset Beachfront Estate</h3>
+                    <p>5 Beds • 5 Baths • 4,800 sqft</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Our Agency</h2>
+        <p class="section-desc">Over a decade of establishing trust and excellence in luxury real estate markets.</p>
+        <div class="text-content">
+            <p>Our dedicated team of professional agents simplifies your home-buying journey. We handle all elements from legal background profiling to custom market evaluations, ensuring you secure maximum value for your real estate assets.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <p class="section-desc">Ready to check out a property? Send us a message and speak with an agent today.</p>
+        <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email Address" required>
+            <textarea rows="5" placeholder="Tell us about the property you are interested in..." required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 PrimeEstates Agency. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
