@@ -1,324 +1,443 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime Site | Real Estate Agency</title>
-    <style>
-        /* Base Reset & Smooth Scroll */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            color: #333333;
-            line-height: 1.6;
-            background-color: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Estate</title>
 
-        /* Responsive Sticky Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #ffffff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            z-index: 1000;
-        }
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.25rem 1.5rem;
-            position: relative;
-        }
-        .logo {
-            font-size: 1.35rem;
-            font-weight: bold;
-            color: #111111;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .logo span {
-            color: #718096;
-            font-weight: 300;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        /* Desktop Menu Style (Large Monitors Only) */
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        nav a {
-            text-decoration: none;
-            color: #2d3748;
-            font-weight: 500;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.2s ease;
-        }
-        nav a:hover {
-            color: #718096;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        /* Mobile Hamburger Icon (Hidden on Desktop) */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 10px; /* Enhanced hit target for easy tapping */
-            width: 44px;
-            height: 44px;
-        }
-        .menu-toggle span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background-color: #111111;
-            border-radius: 2px;
-            transition: 0.3s ease-in-out;
-        }
+body{
+    font-family:Arial, sans-serif;
+    line-height:1.6;
+}
 
-        /* Standard Section Configuration */
-        section {
-            padding: 120px 1.5rem 80px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            border-bottom: 1px solid #edf2f7;
-        }
-        h2 {
-            font-size: 2rem;
-            color: #111111;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-align: center;
-        }
-        .section-desc {
-            color: #718096;
-            text-align: center;
-            max-width: 600px;
-            margin-bottom: 3rem;
-            font-size: 0.95rem;
-        }
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
 
-        /* Placeholder Content Design */
-        .content-box {
-            background-color: #f7fafc;
-            border: 1px dashed #cbd5e0;
-            width: 100%;
-            padding: 4rem 2rem;
-            text-align: center;
-            color: #718096;
-            border-radius: 4px;
-        }
+/* Header */
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    z-index:1000;
+}
 
-        /* Background Overlay shading when menu is open */
-        .sidebar-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0,0,0,0.3);
-            z-index: 999;
-        }
-        .sidebar-overlay.active {
-            display: block;
-        }
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
 
-        /* Responsive Breakpoint: Activates on screens 1024px or narrower */
-        @media (max-width: 1024px) {
-            .menu-toggle {
-                display: flex; /* Forces hamburger button to show up */
-                z-index: 1001; 
-            }
-            
-            /* Transforms the menu into a clean left-aligned side drawer */
-            nav ul {
-                display: flex;
-                flex-direction: column;
-                position: fixed;
-                top: 0;
-                left: -280px; /* Hides sidebar off-screen by default */
-                width: 280px;
-                height: 100vh;
-                background-color: #ffffff;
-                box-shadow: 4px 0 15px rgba(0,0,0,0.1);
-                padding: 90px 2rem 2rem; 
-                gap: 0;
-                transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            }
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#1a365d;
+}
 
-            /* Custom individual item list rows matching your screenshot */
-            nav ul li {
-                width: 100%;
-                border-bottom: 1px solid #f0f0f0; /* Fine divider border */
-            }
-            
-            nav a {
-                display: block;
-                padding: 1.1rem 0; /* Clean spatial layout padding */
-                font-size: 0.85rem;
-                letter-spacing: 1px;
-                color: #222222;
-                font-weight: 400;
-            }
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
 
-            /* State class to slide the menu into view */
-            nav ul.active {
-                left: 0 !important;
-            }
+.nav-links a{
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+    transition:.3s;
+}
 
-            /* Hamburger transform animations into an X button */
-            .menu-toggle.open span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-            .menu-toggle.open span:nth-child(2) {
-                opacity: 0;
-            }
-            .menu-toggle.open span:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -5px);
-            }
+.nav-links a:hover{
+    color:#1a365d;
+}
 
-            section {
-                padding-top: 100px;
-            }
-        }
-    </style>
+/* Hero */
+.hero{
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1600')
+    center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+}
+
+.hero-content{
+    background:rgba(0,0,0,.5);
+    padding:40px;
+    border-radius:10px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 30px;
+    background:#f97316;
+    color:#fff;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+/* Sections */
+section{
+    padding:100px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    color:#1a365d;
+}
+
+/* Properties */
+.property-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.property-card{
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.property-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.property-content{
+    padding:20px;
+}
+
+.price{
+    color:#f97316;
+    font-size:1.4rem;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+/* About */
+.about{
+    background:#f7f7f7;
+}
+
+.about-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about-content img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* Services */
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.service-card{
+    padding:30px;
+    text-align:center;
+    border-radius:10px;
+    background:#fff;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+/* Testimonials */
+.testimonials{
+    background:#f7f7f7;
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.testimonial{
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+}
+
+/* Contact */
+.contact-form{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:5px;
+}
+
+.contact-form button{
+    background:#1a365d;
+    color:#fff;
+    border:none;
+    padding:15px 30px;
+    cursor:pointer;
+}
+
+/* Footer */
+footer{
+    background:#1a365d;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+}
+
+/* Mobile */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:#fff;
+        flex-direction:column;
+        text-align:center;
+        display:none;
+        padding:20px 0;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .about-content{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+}
+</style>
 </head>
-    
+
 <body>
-     <script>
-  const menuToggle = document.getElementById("mobile-menu");
-  const navList = document.getElementById("nav-list");
-  const overlay = document.getElementById("overlay-bg");
 
-  menuToggle.addEventListener("click", () => {
-    menuToggle.classList.toggle("open");
-    navList.classList.toggle("active");
-    overlay.classList.toggle("active");
-  });
+<header>
+    <div class="container navbar">
+        <div class="logo">Prime Estate</div>
 
-  overlay.addEventListener("click", () => {
-    menuToggle.classList.remove("open");
-    navList.classList.remove("active");
-    overlay.classList.remove("active");
-  });
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#properties">Properties</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
-  // Close menu when a link is clicked
-  document.querySelectorAll("#nav-list a").forEach((link) => {
-    link.addEventListener("click", () => {
-      menuToggle.classList.remove("open");
-      navList.classList.remove("active");
-      overlay.classList.remove("active");
+        <div class="menu-toggle" id="menuToggle">
+            ☰
+        </div>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Find Your Dream Home</h1>
+        <p>Luxury Properties, Apartments & Villas</p>
+        <a href="#properties" class="btn">Explore Properties</a>
+    </div>
+</section>
+
+<section id="properties">
+    <div class="container">
+        <div class="section-title">
+            <h2>Featured Properties</h2>
+        </div>
+
+        <div class="property-grid">
+
+            <div class="property-card">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" alt="">
+                <div class="property-content">
+                    <h3>Modern Villa</h3>
+                    <p>4 Bedrooms • 3 Bathrooms</p>
+                    <div class="price">$750,000</div>
+                </div>
+            </div>
+
+            <div class="property-card">
+                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" alt="">
+                <div class="property-content">
+                    <h3>Luxury Apartment</h3>
+                    <p>3 Bedrooms • 2 Bathrooms</p>
+                    <div class="price">$420,000</div>
+                </div>
+            </div>
+
+            <div class="property-card">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750" alt="">
+                <div class="property-content">
+                    <h3>Family House</h3>
+                    <p>5 Bedrooms • 4 Bathrooms</p>
+                    <div class="price">$890,000</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-content">
+            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="">
+            <div>
+                <h2>About Our Agency</h2>
+                <p>
+                    We help clients buy, sell and rent premium properties
+                    with expert guidance and personalized service.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Services</h2>
+        </div>
+
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Property Sales</h3>
+            </div>
+
+            <div class="service-card">
+                <h3>Property Rental</h3>
+            </div>
+
+            <div class="service-card">
+                <h3>Investment Advice</h3>
+            </div>
+
+            <div class="service-card">
+                <h3>Property Management</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <div class="section-title">
+            <h2>Testimonials</h2>
+        </div>
+
+        <div class="testimonial-grid">
+
+            <div class="testimonial">
+                <p>
+                    Excellent service and very professional team.
+                </p>
+                <strong>- John Smith</strong>
+            </div>
+
+            <div class="testimonial">
+                <p>
+                    Found my dream house within a week.
+                </p>
+                <strong>- Sarah Johnson</strong>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+        </div>
+
+        <form class="contact-form">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea rows="5" placeholder="Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Prime Estate. All Rights Reserved.</p>
+</footer>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
     });
-  });
+});
 </script>
 
-    <!-- Dim Background Overlay for Mobile Sidebar Viewports -->
-    <div class="sidebar-overlay" id="overlay-bg"></div>
-
-    <!-- Responsive Sticky Navigation Header -->
-    <header>
-        <div class="nav-container">
-            <div class="logo">Prime<span>Site</span></div>
-            
-            <!-- Mobile Toggle Menu Button -->
-            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <!-- Navigation Links Structured to Match Provided Asset Layout -->
-            <nav>
-                <ul id="nav-list">
-                    <li><a href="#buy">Buy</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#rent">Rent</a></li>
-                    <li><a href="#offplan">Off Plan</a></li>
-                    <li><a href="#commercial">Commercial</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#resources">Resources</a></li>
-                    <li><a href="#guides">Guides</a></li>
-                    <li><a href="#about">About</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Sections for Smooth Scrolling Target Mechanics -->
-    <section id="buy">
-        <h2>Properties for Sale</h2>
-        <p class="section-desc">Browse our curated portfolio of residential luxury spaces available for purchase.</p>
-        <div class="content-box">[Development Box: Place Buying Component Grid Here]</div>
-    </section>
-
-    <section id="rent">
-        <h2>Properties for Rent</h2>
-        <p class="section-desc">Premium long-term and short-term premium residential leases in key sectors.</p>
-        <div class="content-box">[Development Box: Place Rental Listings Here]</div>
-    </section>
-
-    <section id="offplan">
-        <h2>Off Plan Projects</h2>
-        <p class="section-desc">Upcoming investment opportunities and newly announced developments direct from builders.</p>
-        <div class="content-box">[Development Box: Place Pre-launch Content Here]</div>
-    </section>
-
-    <section id="commercial">
-        <h2>Commercial Real Estate</h2>
-        <p class="section-desc">Corporate offices, industrial warehouses, and high-street retail spaces available.</p>
-        <div class="content-box">[Development Box: Place Commercial Units Here]</div>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <p class="section-desc">From property valuations to legally sound asset background checks and consulting.</p>
-        <div class="content-box">[Development Box: Place Agency Offerings Description Here]</div>
-    </section>
-
-    <section id="resources">
-        <h2>Market Resources</h2>
-        <p class="section-desc">Calculators, analytics logs, and downloadable asset estimation spreadsheets.</p>
-        <div class="content-box">[Development Box: Place Client Tools Here]</div>
-    </section>
-
-    <section id="guides">
-        <h2>Area Guides</h2>
-        <p class="section-desc">In-depth neighborhood insights, connectivity reviews, and schooling system scorecards.</p>
-        <div class="content-box">[Development Box: Place Informational Hub Content Here]</div>
-    </section>
-
-    <section id="about">
-        <h2>About Prime Site</h2>
-        <p class="section-desc">Over a decade of trusted boutique consultancy services in luxury real estate ecosystems.</p>
-        <div class="content-box">[Development Box: Place Corporate Bios Here]</div>
-    </section>
-
-    <section id="contact">
-        <h2>Connect With An Agent</h2>
-        <p class="section-desc">Schedule private physical properties viewing walks or get a detailed portfolio evaluation.</p>
-    </section>
 </body>
+</html>
