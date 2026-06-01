@@ -3,9 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prime Estate</title>
+<title>Career Dreamz | Study Abroad Consultants</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -17,8 +21,9 @@ html{
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:'Poppins',sans-serif;
     line-height:1.6;
+    color:#333;
 }
 
 .container{
@@ -27,14 +32,15 @@ body{
     margin:auto;
 }
 
-/* Header */
+/* HEADER */
+
 header{
     position:fixed;
     top:0;
     left:0;
     width:100%;
     background:#fff;
-    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    box-shadow:0 2px 20px rgba(0,0,0,.08);
     z-index:1000;
 }
 
@@ -42,149 +48,196 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 0;
+    padding:18px 0;
 }
 
 .logo{
     font-size:28px;
-    font-weight:bold;
-    color:#1a365d;
+    font-weight:700;
+    color:#0B3C5D;
+}
+
+.logo span{
+    color:#D9B310;
 }
 
 .nav-links{
-    display:flex;
     list-style:none;
+    display:flex;
     gap:30px;
 }
 
 .nav-links a{
     text-decoration:none;
     color:#333;
-    font-weight:600;
+    font-weight:500;
     transition:.3s;
 }
 
 .nav-links a:hover{
-    color:#1a365d;
+    color:#328CC1;
 }
 
-/* Hero */
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* HERO */
+
 .hero{
     height:100vh;
-    background:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1600')
-    center/cover no-repeat;
+    background:
+    linear-gradient(rgba(11,60,93,.75),rgba(11,60,93,.75)),
+    url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
     display:flex;
     align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:#fff;
+    color:white;
 }
 
 .hero-content{
-    background:rgba(0,0,0,.5);
-    padding:40px;
-    border-radius:10px;
+    max-width:700px;
 }
 
 .hero h1{
-    font-size:3rem;
-    margin-bottom:15px;
+    font-size:58px;
+    line-height:1.2;
+    margin-bottom:20px;
 }
 
 .hero p{
-    font-size:1.2rem;
-    margin-bottom:20px;
+    font-size:18px;
+    margin-bottom:30px;
 }
 
 .btn{
     display:inline-block;
-    padding:12px 30px;
-    background:#f97316;
+    padding:14px 30px;
+    background:#D9B310;
     color:#fff;
     text-decoration:none;
-    border-radius:5px;
+    border-radius:50px;
+    font-weight:600;
 }
 
-/* Sections */
+.btn:hover{
+    background:#c09c0b;
+}
+
+/* SECTION */
+
 section{
     padding:100px 0;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:50px;
+    margin-bottom:60px;
 }
 
 .section-title h2{
-    font-size:2.5rem;
-    color:#1a365d;
+    font-size:40px;
+    color:#0B3C5D;
 }
 
-/* Properties */
-.property-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-}
-
-.property-card{
-    border-radius:10px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-
-.property-card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.property-content{
-    padding:20px;
-}
-
-.price{
-    color:#f97316;
-    font-size:1.4rem;
-    font-weight:bold;
+.section-title p{
     margin-top:10px;
+    color:#666;
 }
 
-/* About */
-.about{
-    background:#f7f7f7;
-}
+/* ABOUT */
 
-.about-content{
+.about-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:40px;
+    gap:50px;
     align-items:center;
 }
 
-.about-content img{
+.about-grid img{
     width:100%;
-    border-radius:10px;
+    border-radius:15px;
 }
 
-/* Services */
+.about-text h3{
+    font-size:30px;
+    margin-bottom:20px;
+    color:#0B3C5D;
+}
+
+/* SERVICES */
+
+.services{
+    background:#f8fafc;
+}
+
 .service-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
 }
 
-.service-card{
-    padding:30px;
-    text-align:center;
-    border-radius:10px;
-    background:#fff;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+.card{
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    transition:.3s;
 }
 
-/* Testimonials */
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#0B3C5D;
+}
+
+/* COUNTRIES */
+
+.country-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+
+.country{
+    text-align:center;
+    background:#fff;
+    border:1px solid #eee;
+    padding:30px;
+    border-radius:15px;
+    font-size:22px;
+    font-weight:600;
+}
+
+/* STATS */
+
+.stats{
+    background:#0B3C5D;
+    color:white;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    text-align:center;
+}
+
+.stat h3{
+    font-size:42px;
+    color:#D9B310;
+}
+
+/* TESTIMONIALS */
+
 .testimonials{
-    background:#f7f7f7;
+    background:#f8fafc;
 }
 
 .testimonial-grid{
@@ -194,79 +247,95 @@ section{
 }
 
 .testimonial{
-    background:#fff;
-    padding:25px;
-    border-radius:10px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
 }
 
-/* Contact */
-.contact-form{
-    max-width:700px;
-    margin:auto;
+/* CONTACT */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-info{
+    background:#0B3C5D;
+    color:white;
+    padding:40px;
+    border-radius:15px;
 }
 
 .contact-form input,
-.contact-form textarea{
+.contact-form textarea,
+.contact-form select{
     width:100%;
     padding:15px;
     margin-bottom:15px;
     border:1px solid #ddd;
-    border-radius:5px;
+    border-radius:10px;
 }
 
 .contact-form button{
-    background:#1a365d;
-    color:#fff;
+    width:100%;
     border:none;
-    padding:15px 30px;
+    padding:15px;
+    background:#0B3C5D;
+    color:white;
+    border-radius:10px;
     cursor:pointer;
+    font-size:16px;
 }
 
-/* Footer */
+/* FOOTER */
+
 footer{
-    background:#1a365d;
-    color:#fff;
+    background:#081f31;
+    color:white;
     text-align:center;
     padding:25px;
 }
 
-/* Mobile */
-.menu-toggle{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
-}
+/* MOBILE */
 
 @media(max-width:768px){
 
-    .menu-toggle{
-        display:block;
-    }
-
-    .nav-links{
-        position:absolute;
-        top:80px;
-        left:0;
-        width:100%;
-        background:#fff;
-        flex-direction:column;
-        text-align:center;
-        display:none;
-        padding:20px 0;
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .about-content{
-        grid-template-columns:1fr;
-    }
-
-    .hero h1{
-        font-size:2rem;
-    }
+.hero h1{
+    font-size:38px;
 }
+
+.about-grid,
+.contact-grid{
+    grid-template-columns:1fr;
+}
+
+.stats-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.menu-btn{
+    display:block;
+}
+
+.nav-links{
+    position:absolute;
+    top:75px;
+    left:0;
+    width:100%;
+    background:white;
+    flex-direction:column;
+    text-align:center;
+    display:none;
+    padding:20px 0;
+}
+
+.nav-links.active{
+    display:flex;
+}
+}
+
 </style>
 </head>
 
@@ -274,169 +343,330 @@ footer{
 
 <header>
     <div class="container navbar">
-        <div class="logo">Prime Estate</div>
 
-        <ul class="nav-links" id="navLinks">
+        <div class="logo">
+            Career <span>Dreamz</span>
+        </div>
+
+        <ul class="nav-links" id="menu">
             <li><a href="#home">Home</a></li>
-            <li><a href="#properties">Properties</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#countries">Countries</a></li>
+            <li><a href="#success">Success</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <div class="menu-toggle" id="menuToggle">
+        <div class="menu-btn" id="menuBtn">
             ☰
         </div>
+
     </div>
 </header>
 
+<!-- HERO -->
+
 <section class="hero" id="home">
-    <div class="hero-content">
-        <h1>Find Your Dream Home</h1>
-        <p>Luxury Properties, Apartments & Villas</p>
-        <a href="#properties" class="btn">Explore Properties</a>
+    <div class="container">
+        <div class="hero-content">
+            <h1>Turn Your Study Abroad Dreams Into Reality</h1>
+
+            <p>
+                Expert admission guidance, visa assistance,
+                scholarship support and career counseling for
+                students aspiring to study overseas.
+            </p>
+
+            <a href="#contact" class="btn">
+                Free Consultation
+            </a>
+        </div>
     </div>
 </section>
 
-<section id="properties">
+<!-- ABOUT -->
+
+<section id="about">
     <div class="container">
+
         <div class="section-title">
-            <h2>Featured Properties</h2>
+            <h2>About Career Dreamz</h2>
+            <p>Your trusted overseas education partner.</p>
         </div>
 
-        <div class="property-grid">
+        <div class="about-grid">
 
-            <div class="property-card">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" alt="">
-                <div class="property-content">
-                    <h3>Modern Villa</h3>
-                    <p>4 Bedrooms • 3 Bathrooms</p>
-                    <div class="price">$750,000</div>
-                </div>
-            </div>
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80">
 
-            <div class="property-card">
-                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" alt="">
-                <div class="property-content">
-                    <h3>Luxury Apartment</h3>
-                    <p>3 Bedrooms • 2 Bathrooms</p>
-                    <div class="price">$420,000</div>
-                </div>
-            </div>
+            <div class="about-text">
+                <h3>Helping Students Achieve Global Success</h3>
 
-            <div class="property-card">
-                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750" alt="">
-                <div class="property-content">
-                    <h3>Family House</h3>
-                    <p>5 Bedrooms • 4 Bathrooms</p>
-                    <div class="price">$890,000</div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="about" id="about">
-    <div class="container">
-        <div class="about-content">
-            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="">
-            <div>
-                <h2>About Our Agency</h2>
                 <p>
-                    We help clients buy, sell and rent premium properties
-                    with expert guidance and personalized service.
+                    Career Dreamz provides personalized guidance for
+                    students seeking international education opportunities.
+                    From university selection to visa approval, our experts
+                    support every step of your academic journey.
+                </p>
+
+                <br>
+
+                <p>
+                    We partner with leading universities and institutions
+                    across the UK, Canada, Australia, USA, Germany and
+                    New Zealand.
                 </p>
             </div>
+
         </div>
+
     </div>
 </section>
 
-<section id="services">
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
     <div class="container">
+
         <div class="section-title">
             <h2>Our Services</h2>
+            <p>Comprehensive support for your future.</p>
         </div>
 
         <div class="service-grid">
-            <div class="service-card">
-                <h3>Property Sales</h3>
+
+            <div class="card">
+                <h3>University Admissions</h3>
+                <p>Application assistance for top universities worldwide.</p>
             </div>
 
-            <div class="service-card">
-                <h3>Property Rental</h3>
+            <div class="card">
+                <h3>Visa Processing</h3>
+                <p>Complete visa documentation and interview guidance.</p>
             </div>
 
-            <div class="service-card">
-                <h3>Investment Advice</h3>
+            <div class="card">
+                <h3>Scholarship Assistance</h3>
+                <p>Identify and apply for scholarships and grants.</p>
             </div>
 
-            <div class="service-card">
-                <h3>Property Management</h3>
+            <div class="card">
+                <h3>Career Counseling</h3>
+                <p>Expert counseling aligned with your career goals.</p>
             </div>
+
         </div>
+
     </div>
+
 </section>
 
-<section class="testimonials" id="testimonials">
+<!-- COUNTRIES -->
+
+<section id="countries">
+
     <div class="container">
+
         <div class="section-title">
-            <h2>Testimonials</h2>
+            <h2>Study Destinations</h2>
+            <p>Explore world-class education opportunities.</p>
+        </div>
+
+        <div class="country-grid">
+
+            <div class="country">🇨🇦 Canada</div>
+            <div class="country">🇬🇧 UK</div>
+            <div class="country">🇦🇺 Australia</div>
+            <div class="country">🇺🇸 USA</div>
+            <div class="country">🇩🇪 Germany</div>
+            <div class="country">🇳🇿 New Zealand</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats" id="success">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+                <h3 class="counter" data-target="500">0</h3>
+                <p>Students Placed</p>
+            </div>
+
+            <div class="stat">
+                <h3 class="counter" data-target="120">0</h3>
+                <p>Partner Universities</p>
+            </div>
+
+            <div class="stat">
+                <h3 class="counter" data-target="95">0</h3>
+                <p>Visa Success %</p>
+            </div>
+
+            <div class="stat">
+                <h3 class="counter" data-target="10">0</h3>
+                <p>Years Experience</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section class="testimonials">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Student Success Stories</h2>
         </div>
 
         <div class="testimonial-grid">
 
             <div class="testimonial">
                 <p>
-                    Excellent service and very professional team.
+                    "Career Dreamz guided me through every step of my
+                    admission and visa process. Today I am studying in Canada."
                 </p>
-                <strong>- John Smith</strong>
+                <br>
+                <strong>- Ahmed</strong>
             </div>
 
             <div class="testimonial">
                 <p>
-                    Found my dream house within a week.
+                    "Professional team and excellent support throughout my
+                    university application journey."
                 </p>
-                <strong>- Sarah Johnson</strong>
+                <br>
+                <strong>- Sarah</strong>
+            </div>
+
+            <div class="testimonial">
+                <p>
+                    "Their counseling helped me choose the right course and
+                    university for my future goals."
+                </p>
+                <br>
+                <strong>- Arjun</strong>
             </div>
 
         </div>
+
     </div>
+
 </section>
 
+<!-- CONTACT -->
+
 <section id="contact">
+
     <div class="container">
+
         <div class="section-title">
             <h2>Contact Us</h2>
+            <p>Book your free consultation today.</p>
         </div>
 
-        <form class="contact-form">
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <textarea rows="5" placeholder="Message"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <div class="contact-grid">
+
+            <div class="contact-info">
+                <h3>Career Dreamz</h3>
+
+                <br>
+
+                <p>📍 Your Office Address</p>
+                <p>📞 +91 XXXXX XXXXX</p>
+                <p>✉ info@careerdreamz.com</p>
+
+                <br>
+
+                <p>
+                    Let us help you achieve your dream of studying abroad.
+                </p>
+            </div>
+
+            <form class="contact-form">
+
+                <input type="text" placeholder="Full Name">
+
+                <input type="email" placeholder="Email Address">
+
+                <input type="tel" placeholder="Phone Number">
+
+                <select>
+                    <option>Select Preferred Country</option>
+                    <option>Canada</option>
+                    <option>UK</option>
+                    <option>Australia</option>
+                    <option>USA</option>
+                    <option>Germany</option>
+                </select>
+
+                <textarea rows="5" placeholder="Your Message"></textarea>
+
+                <button type="submit">
+                    Send Inquiry
+                </button>
+
+            </form>
+
+        </div>
+
     </div>
+
 </section>
 
 <footer>
-    <p>© 2026 Prime Estate. All Rights Reserved.</p>
+    © 2026 Career Dreamz. All Rights Reserved.
 </footer>
 
 <script>
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
 
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+const menuBtn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
+
+menuBtn.addEventListener("click",()=>{
+    menu.classList.toggle("active");
 });
 
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
+document.querySelectorAll('.nav-links a').forEach(link=>{
+    link.addEventListener('click',()=>{
+        menu.classList.remove('active');
     });
 });
+
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+
+    const updateCounter = () => {
+
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+
+        const increment = target / 100;
+
+        if(count < target){
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCounter,20);
+        }else{
+            counter.innerText = target;
+        }
+    };
+
+    updateCounter();
+});
+
 </script>
 
 </body>
