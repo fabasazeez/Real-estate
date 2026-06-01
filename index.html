@@ -206,7 +206,34 @@
             }
         }
     </style>
+    <script>
+  const menuToggle = document.getElementById("mobile-menu");
+  const navList = document.getElementById("nav-list");
+  const overlay = document.getElementById("overlay-bg");
+
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("open");
+    navList.classList.toggle("active");
+    overlay.classList.toggle("active");
+  });
+
+  overlay.addEventListener("click", () => {
+    menuToggle.classList.remove("open");
+    navList.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+
+  // Close menu when a link is clicked
+  document.querySelectorAll("#nav-list a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menuToggle.classList.remove("open");
+      navList.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+  });
+</script>
 </head>
+    
 <body>
 
     <!-- Dim Background Overlay for Mobile Sidebar Viewports -->
