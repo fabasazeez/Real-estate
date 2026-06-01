@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrimeEstates | Premium Real Estate Agency</title>
+    <title>Prime Site | Real Estate Agency</title>
     <style>
         /* Base Reset & Smooth Scroll */
         * {
@@ -16,19 +16,19 @@
             scroll-behavior: smooth;
         }
         body {
-            color: #333;
+            color: #333333;
             line-height: 1.6;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
         }
 
-        /* Responsive Sticky Header Navigation */
+        /* Responsive Sticky Header */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             z-index: 1000;
         }
         .nav-container {
@@ -37,19 +37,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 1.5rem;
+            padding: 1.25rem 1.5rem;
             position: relative;
         }
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             font-weight: bold;
-            color: #1a365d;
+            color: #111111;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .logo span {
-            color: #3182ce;
+            color: #718096;
+            font-weight: 300;
         }
 
-        /* Desktop Menu Rules */
+        /* Desktop Menu Style */
         nav ul {
             display: flex;
             list-style: none;
@@ -57,15 +60,18 @@
         }
         nav a {
             text-decoration: none;
-            color: #4a5568;
+            color: #2d3748;
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s ease;
         }
         nav a:hover {
-            color: #3182ce;
+            color: #718096;
         }
 
-        /* Mobile Hamburger Icon Menu (Hidden on Desktop) */
+        /* Mobile Hamburger Icon (Hidden on Desktop) */
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -73,18 +79,19 @@
             cursor: pointer;
             background: none;
             border: none;
+            padding: 5px;
         }
         .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background-color: #1a365d;
+            width: 24px;
+            height: 2px;
+            background-color: #111111;
             border-radius: 2px;
-            transition: 0.3s;
+            transition: 0.3s ease-in-out;
         }
 
         /* Standard Section Configuration */
         section {
-            padding: 100px 1.5rem 60px; /* Large top padding so sticky header won't block titles */
+            padding: 120px 1.5rem 80px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -92,230 +99,198 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
+            border-bottom: 1px solid #edf2f7;
         }
         h2 {
-            font-size: 2.25rem;
-            color: #1a365d;
+            font-size: 2rem;
+            color: #111111;
             margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             text-align: center;
         }
         .section-desc {
             color: #718096;
             text-align: center;
             max-width: 600px;
-            margin-bottom: 2.5rem;
-            font-size: 1rem;
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
         }
 
-        /* Responsive Hero Section */
-        #home {
-            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), url('https://unsplash.com') no-repeat center center/cover;
-            color: white;
+        /* Placeholder Content Design */
+        .content-box {
+            background-color: #f7fafc;
+            border: 1px dashed #cbd5e0;
+            width: 100%;
+            padding: 4rem 2rem;
             text-align: center;
-            width: 100%;
-            max-width: 100%;
-        }
-        #home h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            padding: 0 1rem;
-        }
-        #home p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            padding: 0 1rem;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #3182ce;
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #2b6cb0;
+            color: #718096;
+            border-radius: 4px;
         }
 
-        /* Fully Responsive Fluid Grid System */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            width: 100%;
-        }
-        .card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .card-img {
-            height: 220px;
-            background-size: cover;
-            background-position: center;
-        }
-        .card-content {
-            padding: 1.5rem;
-        }
-        .price {
-            color: #3182ce;
-            font-weight: bold;
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* About Block Details */
-        .text-content {
-            max-width: 800px;
-            text-align: center;
-            font-size: 1.1rem;
-            color: #4a5568;
-            padding: 0 1rem;
-        }
-
-        /* Responsive Form Engine */
-        form {
-            width: 100%;
-            max-width: 500px;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 0.85rem;
-            border: 1px solid #cbd5e0;
-            border-radius: 5px;
-            font-size: 1rem;
-            outline: none;
-        }
-        input:focus, textarea:focus {
-            border-color: #3182ce;
-        }
-        form .btn {
-            border: none;
-            cursor: pointer;
-        }
-
-        /* Footer Settings */
-        footer {
-            background-color: #1a365d;
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-
-        /* Media Queries for Smartphones & Mobile Screens */
+        /* Mobile Layout & Sidebar Drawer (Matches Reference Image) */
         @media (max-width: 768px) {
-            /* Transform Navbar into a Responsive Toggle Menu */
             .menu-toggle {
-                display: flex; /* Show Hamburger Icon */
-            }
-            nav ul {
-                display: none; /* Hide default horizontal list */
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: #ffffff;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-                padding: 1.5rem;
-                gap: 1.5rem;
-                text-align: center;
-            }
-            /* JavaScript class hook to open mobile menu drop down */
-            nav ul.active {
                 display: flex;
+                z-index: 1001; 
             }
             
-            /* Scale font weights down for smaller device visibility */
-            #home h1 {
-                font-size: 2.25rem;
+            /* Transforms the menu into a clean left-aligned side drawer */
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: -280px; /* Hides sidebar off-screen by default */
+                width: 280px;
+                height: 100vh;
+                background-color: #ffffff;
+                box-shadow: 4px 0 15px rgba(0,0,0,0.05);
+                padding: 90px 2rem 2rem; 
+                gap: 0; /* Managed by item heights */
+                transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
-            #home p {
-                font-size: 1rem;
+
+            /* Custom individual item list rows matching your screenshot */
+            nav ul li {
+                width: 100%;
+                border-bottom: 1px solid #f0f0f0; /* Fine divider border */
             }
-            h2 {
-                font-size: 1.85rem;
+            
+            nav a {
+                display: block;
+                padding: 1.1rem 0; /* Clean spatial layout padding */
+                font-size: 0.85rem;
+                letter-spacing: 1px;
+                color: #222222;
+                font-weight: 400;
             }
+
+            /* State class to slide the menu into view */
+            nav ul.active {
+                left: 0;
+            }
+            
+            /* Background Overlay shading when menu is open */
+            .sidebar-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(0,0,0,0.2);
+                z-index: 999;
+            }
+            .sidebar-overlay.active {
+                display: block;
+            }
+
+            /* Hamburger transform animations into an X button */
+            .menu-toggle.open span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .menu-toggle.open span:nth-child(2) {
+                opacity: 0;
+            }
+            .menu-toggle.open span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
             section {
-                padding-top: 85px; /* Slightly compact safe zone margins for mobile */
-                min-height: auto;
+                padding-top: 100px;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- Dim Background Overlay for Mobile Sidebar Viewports -->
+    <div class="sidebar-overlay" id="overlay-bg"></div>
+
     <!-- Responsive Sticky Navigation Header -->
     <header>
         <div class="nav-container">
-            <div class="logo">Prime<span>Estates</span></div>
+            <div class="logo">Prime<span>Site</span></div>
             
             <!-- Mobile Toggle Menu Button -->
-            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation">
+            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
+            <!-- Navigation Links Structured to Match Provided Asset Layout -->
             <nav>
                 <ul id="nav-list">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#properties">Properties</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#buy">Buy</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#rent">Rent</a></li>
+                    <li><a href="#offplan">Off Plan</a></li>
+                    <li><a href="#commercial">Commercial</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#guides">Guides</a></li>
+                    <li><a href="#about">About</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Home Banner Section -->
-    <section id="home">
-        <h1>Find Your Dream Home</h1>
-        <p>We connect buyers and sellers with premium luxury properties across prime metropolitan locations.</p>
-        <a href="#properties" class="btn">View Listings</a>
+    <!-- Sections for Smooth Scrolling Target Mechanics -->
+    <section id="buy">
+        <h2>Properties for Sale</h2>
+        <p class="section-desc">Browse our curated portfolio of residential luxury spaces available for purchase.</p>
+        <div class="content-box">[Development Box: Place Buying Component Grid Here]</div>
     </section>
 
-    <!-- Responsive Properties Grid Section -->
-    <section id="properties">
-        <h2>Featured Properties</h2>
-        <p class="section-desc">Handpicked residential spaces tailored for modern lifestyle comforts.</p>
-        <div class="grid">
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://unsplash.com');"></div>
-                <div class="card-content">
-                    <div class="price">$1,250,000</div>
-                    <h3>Skyline Modern Villa</h3>
-                    <p>4 Beds • 3 Baths • 3,200 sqft</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://unsplash.com');"></div>
-                <div class="card-content">
-                    <div class="price">$890,000</div>
-                    <h3>The Urban Penthouse</h3>
-                    <p>3 Beds • 2 Baths • 2,100 sqft</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://unsplash.com');"></div>
-                <div class="card-content">
-                    <div class="price">$2,100,000</div>
-                    <h3>Sunset Beachfront Estate</h3>
-                    <p>5 Beds • 5 Baths • 4,800 sqft</p>
-                </div>
-            </div>
-        </div>
+    <section id="rent">
+        <h2>Properties for Rent</h2>
+        <p class="section-desc">Premium long-term and short-term premium residential leases in key sectors.</p>
+        <div class="content-box">[Development Box: Place Rental Listings Here]</div>
     </section>
 
-    <!-- About Section -->
+    <section id="offplan">
+        <h2>Off Plan Projects</h2>
+        <p class="section-desc">Upcoming investment opportunities and newly announced developments direct from builders.</p>
+        <div class="content-box">[Development Box: Place Pre-launch Content Here]</div>
+    </section>
+
+    <section id="commercial">
+        <h2>Commercial Real Estate</h2>
+        <p class="section-desc">Corporate offices, industrial warehouses, and high-street retail spaces available.</p>
+        <div class="content-box">[Development Box: Place Commercial Units Here]</div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p class="section-desc">From property valuations to legally sound asset background checks and consulting.</p>
+        <div class="content-box">[Development Box: Place Agency Offerings Description Here]</div>
+    </section>
+
+    <section id="resources">
+        <h2>Market Resources</h2>
+        <p class="section-desc">Calculators, analytics logs, and downloadable asset estimation spreadsheets.</p>
+        <div class="content-box">[Development Box: Place Client Tools Here]</div>
+    </section>
+
+    <section id="guides">
+        <h2>Area Guides</h2>
+        <p class="section-desc">In-depth neighborhood insights, connectivity reviews, and schooling system scorecards.</p>
+        <div class="content-box">[Development Box: Place Informational Hub Content Here]</div>
+    </section>
+
     <section id="about">
-        <h2>About Our Agency</h2>
-        <p class="section-desc">Over a decade of establishing trust and excellence in luxury real estate markets.</p>
-        <div class="text-content">
+        <h2>About Prime Site</h2>
+        <p class="section-desc">Over a decade of trusted boutique consultancy services in luxury real estate ecosystems.</p>
+        <div class="content-box">[Development Box: Place Corporate Bios Here]</div>
+    </section>
+
+    <section id="contact">
+        <h2>Connect With An Agent</h2>
+        <p class="section-desc">Schedule private physical properties viewing walks or get a detailed portfolio evaluation.</p>
+        <div class="content-box">[Development Box: Place Lead Contact Form Handling Logic Here]</div>
+    </section>
+
+    <!-- Sidebar Animation Logic -->
+    <script>
