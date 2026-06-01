@@ -3,13 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Career Dreamz | Study Abroad Consultants</title>
+<title>Career Dreamz | Educational Consultancy</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -22,8 +20,8 @@ html{
 
 body{
     font-family:'Poppins',sans-serif;
-    line-height:1.6;
     color:#333;
+    line-height:1.6;
 }
 
 .container{
@@ -40,7 +38,7 @@ header{
     left:0;
     width:100%;
     background:#fff;
-    box-shadow:0 2px 20px rgba(0,0,0,.08);
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
     z-index:1000;
 }
 
@@ -52,30 +50,30 @@ header{
 }
 
 .logo{
-    font-size:28px;
+    font-size:30px;
     font-weight:700;
-    color:#0B3C5D;
+    color:#0A4D8C;
 }
 
 .logo span{
-    color:#D9B310;
+    color:#1976D2;
 }
 
 .nav-links{
-    list-style:none;
     display:flex;
+    list-style:none;
     gap:30px;
 }
 
 .nav-links a{
     text-decoration:none;
-    color:#333;
-    font-weight:500;
+    color:#0A4D8C;
+    font-weight:600;
     transition:.3s;
 }
 
 .nav-links a:hover{
-    color:#328CC1;
+    color:#1976D2;
 }
 
 .menu-btn{
@@ -87,47 +85,74 @@ header{
 /* HERO */
 
 .hero{
+    position:relative;
     height:100vh;
-    background:
-    linear-gradient(rgba(11,60,93,.75),rgba(11,60,93,.75)),
-    url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80');
-    background-size:cover;
-    background-position:center;
+    overflow:hidden;
+}
+
+.slider{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:1s;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+    rgba(10,77,140,.75),
+    rgba(25,118,210,.75));
     display:flex;
     align-items:center;
+    justify-content:center;
+    text-align:center;
     color:white;
 }
 
 .hero-content{
-    max-width:700px;
+    max-width:850px;
+    padding:20px;
 }
 
-.hero h1{
-    font-size:58px;
-    line-height:1.2;
+.hero-content h1{
+    font-size:60px;
     margin-bottom:20px;
 }
 
-.hero p{
-    font-size:18px;
+.hero-content p{
+    font-size:20px;
     margin-bottom:30px;
 }
 
 .btn{
     display:inline-block;
-    padding:14px 30px;
-    background:#D9B310;
-    color:#fff;
+    padding:15px 35px;
+    background:#fff;
+    color:#0A4D8C;
     text-decoration:none;
     border-radius:50px;
     font-weight:600;
 }
 
-.btn:hover{
-    background:#c09c0b;
-}
-
-/* SECTION */
+/* SECTIONS */
 
 section{
     padding:100px 0;
@@ -139,16 +164,19 @@ section{
 }
 
 .section-title h2{
-    font-size:40px;
-    color:#0B3C5D;
+    color:#0A4D8C;
+    font-size:42px;
 }
 
 .section-title p{
-    margin-top:10px;
     color:#666;
 }
 
 /* ABOUT */
+
+.about{
+    background:#f8fbff;
+}
 
 .about-grid{
     display:grid;
@@ -163,16 +191,12 @@ section{
 }
 
 .about-text h3{
-    font-size:30px;
+    color:#0A4D8C;
     margin-bottom:20px;
-    color:#0B3C5D;
+    font-size:32px;
 }
 
 /* SERVICES */
-
-.services{
-    background:#f8fafc;
-}
 
 .service-grid{
     display:grid;
@@ -182,43 +206,50 @@ section{
 
 .card{
     background:white;
-    padding:35px;
     border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    padding:30px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
     transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-8px);
 }
 
 .card h3{
+    color:#0A4D8C;
     margin-bottom:15px;
-    color:#0B3C5D;
 }
 
-/* COUNTRIES */
+/* UNIVERSITIES */
 
-.country-grid{
+.universities{
+    background:#f8fbff;
+}
+
+.uni-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
-.country{
-    text-align:center;
-    background:#fff;
-    border:1px solid #eee;
-    padding:30px;
+.uni-card{
+    background:white;
+    padding:25px;
     border-radius:15px;
-    font-size:22px;
-    font-weight:600;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.uni-card h3{
+    color:#0A4D8C;
+    margin-bottom:10px;
 }
 
 /* STATS */
 
 .stats{
-    background:#0B3C5D;
+    background:#0A4D8C;
     color:white;
 }
 
@@ -230,14 +261,13 @@ section{
 }
 
 .stat h3{
-    font-size:42px;
-    color:#D9B310;
+    font-size:48px;
 }
 
 /* TESTIMONIALS */
 
 .testimonials{
-    background:#f8fafc;
+    background:#f8fbff;
 }
 
 .testimonial-grid{
@@ -250,7 +280,7 @@ section{
     background:white;
     padding:30px;
     border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 /* CONTACT */
@@ -262,15 +292,14 @@ section{
 }
 
 .contact-info{
-    background:#0B3C5D;
+    background:#0A4D8C;
     color:white;
     padding:40px;
     border-radius:15px;
 }
 
 .contact-form input,
-.contact-form textarea,
-.contact-form select{
+.contact-form textarea{
     width:100%;
     padding:15px;
     margin-bottom:15px;
@@ -282,17 +311,16 @@ section{
     width:100%;
     border:none;
     padding:15px;
-    background:#0B3C5D;
+    background:#0A4D8C;
     color:white;
     border-radius:10px;
     cursor:pointer;
-    font-size:16px;
 }
 
 /* FOOTER */
 
 footer{
-    background:#081f31;
+    background:#072f54;
     color:white;
     text-align:center;
     padding:25px;
@@ -302,8 +330,12 @@ footer{
 
 @media(max-width:768px){
 
-.hero h1{
+.hero-content h1{
     font-size:38px;
+}
+
+.hero-content p{
+    font-size:16px;
 }
 
 .about-grid,
@@ -335,189 +367,219 @@ footer{
     display:flex;
 }
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-    <div class="container navbar">
+<div class="container navbar">
 
-        <div class="logo">
-            Career <span>Dreamz</span>
-        </div>
+<div class="logo">
+Career <span>Dreamz</span>
+</div>
 
-        <ul class="nav-links" id="menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#countries">Countries</a></li>
-            <li><a href="#success">Success</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+<ul class="nav-links" id="menu">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#universities">Universities</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-        <div class="menu-btn" id="menuBtn">
-            ☰
-        </div>
+<div class="menu-btn" id="menuBtn">☰</div>
 
-    </div>
+</div>
 </header>
 
 <!-- HERO -->
 
 <section class="hero" id="home">
-    <div class="container">
-        <div class="hero-content">
-            <h1>Turn Your Study Abroad Dreams Into Reality</h1>
 
-            <p>
-                Expert admission guidance, visa assistance,
-                scholarship support and career counseling for
-                students aspiring to study overseas.
-            </p>
+<div class="slider">
 
-            <a href="#contact" class="btn">
-                Free Consultation
-            </a>
-        </div>
-    </div>
+<div class="slide active">
+<img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=80">
+</div>
+
+</div>
+
+<div class="hero-overlay">
+
+<div class="hero-content">
+
+<h1>Shape Your Future With Career Dreamz</h1>
+
+<p>
+Trusted educational consultancy helping students secure
+admissions in leading colleges and universities across
+Karnataka and Tamil Nadu.
+</p>
+
+<a href="#contact" class="btn">
+Get Free Counselling
+</a>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- ABOUT -->
 
-<section id="about">
-    <div class="container">
+<section class="about" id="about">
 
-        <div class="section-title">
-            <h2>About Career Dreamz</h2>
-            <p>Your trusted overseas education partner.</p>
-        </div>
+<div class="container">
 
-        <div class="about-grid">
+<div class="section-title">
+<h2>About Career Dreamz</h2>
+<p>Your Trusted Education Partner</p>
+</div>
 
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80">
+<div class="about-grid">
 
-            <div class="about-text">
-                <h3>Helping Students Achieve Global Success</h3>
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80">
 
-                <p>
-                    Career Dreamz provides personalized guidance for
-                    students seeking international education opportunities.
-                    From university selection to visa approval, our experts
-                    support every step of your academic journey.
-                </p>
+<div class="about-text">
 
-                <br>
+<h3>Guiding Students Towards Success</h3>
 
-                <p>
-                    We partner with leading universities and institutions
-                    across the UK, Canada, Australia, USA, Germany and
-                    New Zealand.
-                </p>
-            </div>
+<p>
+Career Dreamz specializes in helping students find the
+right college, course, and career path. We provide
+expert guidance for admissions into top institutions
+across Karnataka and Tamil Nadu.
+</p>
 
-        </div>
+<br>
 
-    </div>
+<p>
+From engineering and medical programs to arts,
+science, management, and professional courses,
+our counselors help students make informed decisions.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- SERVICES -->
 
-<section class="services" id="services">
+<section id="services">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
-            <h2>Our Services</h2>
-            <p>Comprehensive support for your future.</p>
-        </div>
+<div class="section-title">
+<h2>Our Services</h2>
+<p>Complete Admission Assistance</p>
+</div>
 
-        <div class="service-grid">
+<div class="service-grid">
 
-            <div class="card">
-                <h3>University Admissions</h3>
-                <p>Application assistance for top universities worldwide.</p>
-            </div>
+<div class="card">
+<h3>Engineering Admissions</h3>
+<p>B.Tech & BE admissions guidance.</p>
+</div>
 
-            <div class="card">
-                <h3>Visa Processing</h3>
-                <p>Complete visa documentation and interview guidance.</p>
-            </div>
+<div class="card">
+<h3>Medical Courses</h3>
+<p>MBBS, BDS, Nursing & Allied Health.</p>
+</div>
 
-            <div class="card">
-                <h3>Scholarship Assistance</h3>
-                <p>Identify and apply for scholarships and grants.</p>
-            </div>
+<div class="card">
+<h3>MBA & Management</h3>
+<p>Business and management programs.</p>
+</div>
 
-            <div class="card">
-                <h3>Career Counseling</h3>
-                <p>Expert counseling aligned with your career goals.</p>
-            </div>
+<div class="card">
+<h3>Career Counselling</h3>
+<p>Personalized career planning support.</p>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
-<!-- COUNTRIES -->
+<!-- UNIVERSITIES -->
 
-<section id="countries">
+<section class="universities" id="universities">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
-            <h2>Study Destinations</h2>
-            <p>Explore world-class education opportunities.</p>
-        </div>
+<div class="section-title">
+<h2>Popular Universities</h2>
+<p>Karnataka & Tamil Nadu Institutions</p>
+</div>
 
-        <div class="country-grid">
+<div class="uni-grid">
 
-            <div class="country">🇨🇦 Canada</div>
-            <div class="country">🇬🇧 UK</div>
-            <div class="country">🇦🇺 Australia</div>
-            <div class="country">🇺🇸 USA</div>
-            <div class="country">🇩🇪 Germany</div>
-            <div class="country">🇳🇿 New Zealand</div>
+<div class="uni-card">
+<h3>Karnataka Colleges</h3>
+<p>Engineering, Medical and Management institutions across Bangalore, Mysore, Mangalore and more.</p>
+</div>
 
-        </div>
+<div class="uni-card">
+<h3>Tamil Nadu Colleges</h3>
+<p>Leading universities and colleges in Chennai, Coimbatore, Trichy and Madurai.</p>
+</div>
 
-    </div>
+<div class="uni-card">
+<h3>Professional Programs</h3>
+<p>Programs in Technology, Healthcare, Commerce and Arts.</p>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 <!-- STATS -->
 
-<section class="stats" id="success">
+<section class="stats">
 
-    <div class="container">
+<div class="container">
 
-        <div class="stats-grid">
+<div class="stats-grid">
 
-            <div class="stat">
-                <h3 class="counter" data-target="500">0</h3>
-                <p>Students Placed</p>
-            </div>
+<div class="stat">
+<h3>5000+</h3>
+<p>Students Guided</p>
+</div>
 
-            <div class="stat">
-                <h3 class="counter" data-target="120">0</h3>
-                <p>Partner Universities</p>
-            </div>
+<div class="stat">
+<h3>300+</h3>
+<p>Partner Colleges</p>
+</div>
 
-            <div class="stat">
-                <h3 class="counter" data-target="95">0</h3>
-                <p>Visa Success %</p>
-            </div>
+<div class="stat">
+<h3>95%</h3>
+<p>Admission Success</p>
+</div>
 
-            <div class="stat">
-                <h3 class="counter" data-target="10">0</h3>
-                <p>Years Experience</p>
-            </div>
+<div class="stat">
+<h3>10+</h3>
+<p>Years Experience</p>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -525,44 +587,44 @@ footer{
 
 <section class="testimonials">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
-            <h2>Student Success Stories</h2>
-        </div>
+<div class="section-title">
+<h2>Student Success Stories</h2>
+</div>
 
-        <div class="testimonial-grid">
+<div class="testimonial-grid">
 
-            <div class="testimonial">
-                <p>
-                    "Career Dreamz guided me through every step of my
-                    admission and visa process. Today I am studying in Canada."
-                </p>
-                <br>
-                <strong>- Ahmed</strong>
-            </div>
+<div class="testimonial">
+<p>
+"Career Dreamz helped me secure admission in my
+dream engineering college. The guidance was excellent."
+</p>
+<br>
+<strong>- Rahul</strong>
+</div>
 
-            <div class="testimonial">
-                <p>
-                    "Professional team and excellent support throughout my
-                    university application journey."
-                </p>
-                <br>
-                <strong>- Sarah</strong>
-            </div>
+<div class="testimonial">
+<p>
+"The counseling process was smooth and transparent.
+Highly recommended."
+</p>
+<br>
+<strong>- Fathima</strong>
+</div>
 
-            <div class="testimonial">
-                <p>
-                    "Their counseling helped me choose the right course and
-                    university for my future goals."
-                </p>
-                <br>
-                <strong>- Arjun</strong>
-            </div>
+<div class="testimonial">
+<p>
+"They helped me choose the right course and college
+based on my interests."
+</p>
+<br>
+<strong>- Arjun</strong>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -570,102 +632,92 @@ footer{
 
 <section id="contact">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
-            <h2>Contact Us</h2>
-            <p>Book your free consultation today.</p>
-        </div>
+<div class="section-title">
+<h2>Contact Us</h2>
+<p>Book Your Free Counselling Session</p>
+</div>
 
-        <div class="contact-grid">
+<div class="contact-grid">
 
-            <div class="contact-info">
-                <h3>Career Dreamz</h3>
+<div class="contact-info">
 
-                <br>
+<h3>Career Dreamz</h3>
 
-                <p>📍 Your Office Address</p>
-                <p>📞 +91 XXXXX XXXXX</p>
-                <p>✉ info@careerdreamz.com</p>
+<br>
 
-                <br>
+<p>📍 Your Office Address</p>
+<p>📞 +91 XXXXX XXXXX</p>
+<p>✉ info@careerdreamz.com</p>
 
-                <p>
-                    Let us help you achieve your dream of studying abroad.
-                </p>
-            </div>
+<br>
 
-            <form class="contact-form">
+<p>
+Helping students build successful futures through
+quality education guidance.
+</p>
 
-                <input type="text" placeholder="Full Name">
+</div>
 
-                <input type="email" placeholder="Email Address">
+<form class="contact-form">
 
-                <input type="tel" placeholder="Phone Number">
+<input type="text" placeholder="Full Name">
 
-                <select>
-                    <option>Select Preferred Country</option>
-                    <option>Canada</option>
-                    <option>UK</option>
-                    <option>Australia</option>
-                    <option>USA</option>
-                    <option>Germany</option>
-                </select>
+<input type="email" placeholder="Email Address">
 
-                <textarea rows="5" placeholder="Your Message"></textarea>
+<input type="tel" placeholder="Phone Number">
 
-                <button type="submit">
-                    Send Inquiry
-                </button>
+<textarea rows="5" placeholder="Tell us about your requirements"></textarea>
 
-            </form>
+<button type="submit">
+Send Inquiry
+</button>
 
-        </div>
+</form>
 
-    </div>
+</div>
+
+</div>
 
 </section>
 
 <footer>
-    © 2026 Career Dreamz. All Rights Reserved.
+© 2026 Career Dreamz. All Rights Reserved.
 </footer>
 
 <script>
 
-const menuBtn = document.getElementById("menuBtn");
-const menu = document.getElementById("menu");
+const menuBtn = document.getElementById('menuBtn');
+const menu = document.getElementById('menu');
 
-menuBtn.addEventListener("click",()=>{
-    menu.classList.toggle("active");
+menuBtn.addEventListener('click',()=>{
+menu.classList.toggle('active');
 });
 
 document.querySelectorAll('.nav-links a').forEach(link=>{
-    link.addEventListener('click',()=>{
-        menu.classList.remove('active');
-    });
+link.addEventListener('click',()=>{
+menu.classList.remove('active');
+});
 });
 
-const counters = document.querySelectorAll('.counter');
+const slides = document.querySelectorAll('.slide');
 
-counters.forEach(counter => {
+let current = 0;
 
-    const updateCounter = () => {
+setInterval(()=>{
 
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
+slides[current].classList.remove('active');
 
-        const increment = target / 100;
+current++;
 
-        if(count < target){
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCounter,20);
-        }else{
-            counter.innerText = target;
-        }
-    };
+if(current >= slides.length){
+current = 0;
+}
 
-    updateCounter();
-});
+slides[current].classList.add('active');
+
+},4000);
 
 </script>
 
