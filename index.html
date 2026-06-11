@@ -3,15 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Career Dreamz | Educational Consultancy</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Prestige Estates</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 html{
@@ -19,456 +21,371 @@ html{
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    color:#333;
-    line-height:1.6;
-}
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+    background:#0b0b0b;
+    color:white;
 }
 
 /* HEADER */
 
 header{
     position:fixed;
+    width:100%;
     top:0;
     left:0;
-    width:100%;
-    background:#fff;
-    box-shadow:0 2px 15px rgba(0,0,0,.08);
+    background:rgba(0,0,0,.9);
+    backdrop-filter:blur(10px);
     z-index:1000;
+    border-bottom:1px solid rgba(212,175,55,.2);
 }
 
-.navbar{
+nav{
+    max-width:1300px;
+    margin:auto;
+    padding:18px 7%;
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    padding:18px 0;
+    justify-content:space-between;
 }
 
 .logo{
-    font-size:30px;
-    font-weight:700;
-    color:#0A4D8C;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
-.logo span{
-    color:#1976D2;
+.logo img{
+    height: 55px;       /* Desktop size */
+    width: auto;
+    object-fit: contain;
+    transition: .3s ease;
+}
+
+.logo img:hover{
+    transform: scale(1.05);
 }
 
 .nav-links{
     display:flex;
+    gap:40px;
     list-style:none;
-    gap:30px;
 }
 
 .nav-links a{
     text-decoration:none;
-    color:#0A4D8C;
-    font-weight:600;
+    color:white;
     transition:.3s;
 }
 
 .nav-links a:hover{
-    color:#1976D2;
+    color:#d4af37;
 }
 
-.menu-btn{
+.contact-btn{
+    background:#d4af37;
+    color:black;
+    padding:12px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.menu-toggle{
     display:none;
-    font-size:28px;
+}
+
+.hamburger{
+    display:none;
+    flex-direction:column;
     cursor:pointer;
+}
+
+.hamburger span{
+    width:28px;
+    height:3px;
+    background:white;
+    margin:4px 0;
 }
 
 /* HERO */
 
 .hero{
-    position:relative;
-    height:100vh;
-    overflow:hidden;
-}
-
-.slider{
-    position:absolute;
-    width:100%;
-    height:100%;
-}
-
-.slide{
-    position:absolute;
-    width:100%;
-    height:100%;
-    opacity:0;
-    transition:1s;
-}
-
-.slide.active{
-    opacity:1;
-}
-
-.slide img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.hero-overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-    rgba(10,77,140,.75),
-    rgba(25,118,210,.75));
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    color:white;
-}
-
-.hero-content{
-    max-width:850px;
-    padding:20px;
+    padding:100px 8%;
+    background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+    url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1600");
+    background-size:cover;
+    background-position:center;
 }
 
 .hero-content h1{
-    font-size:60px;
-    margin-bottom:20px;
+    font-size:70px;
+    line-height:1.2;
+}
+
+.hero-content span{
+    color:#d4af37;
 }
 
 .hero-content p{
-    font-size:20px;
-    margin-bottom:30px;
+    margin:25px auto;
+    max-width:700px;
+    color:#ddd;
+    line-height:1.8;
 }
 
-.btn{
+.hero-btn{
     display:inline-block;
-    padding:15px 35px;
-    background:#fff;
-    color:#0A4D8C;
+    padding:16px 35px;
+    background:#d4af37;
+    color:black;
     text-decoration:none;
-    border-radius:50px;
+    border-radius:40px;
     font-weight:600;
 }
 
-/* SECTIONS */
+/* COMMON */
 
 section{
-    padding:100px 0;
+    padding:100px 8%;
 }
 
 .section-title{
     text-align:center;
+    font-size:45px;
     margin-bottom:60px;
 }
 
-.section-title h2{
-    color:#0A4D8C;
-    font-size:42px;
-}
-
-.section-title p{
-    color:#666;
+.section-title span{
+    color:#d4af37;
 }
 
 /* ABOUT */
 
 .about{
-    background:#f8fbff;
-}
-
-.about-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:50px;
+    gap:60px;
     align-items:center;
 }
 
-.about-grid img{
+.about img{
     width:100%;
-    border-radius:15px;
+    border-radius:20px;
 }
 
-.about-text h3{
-    color:#0A4D8C;
-    margin-bottom:20px;
-    font-size:32px;
+.about-content p{
+    color:#cfcfcf;
+    line-height:1.9;
 }
 
-/* SERVICES */
+/* PROPERTIES */
 
-.service-grid{
+.cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
 }
 
 .card{
-    background:white;
-    border-radius:15px;
-    padding:30px;
-    text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-    transition:.3s;
+    background:#151515;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px);
 }
 
-.card h3{
-    color:#0A4D8C;
-    margin-bottom:15px;
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
 }
 
-/* UNIVERSITIES */
-
-.universities{
-    background:#f8fbff;
+.card-content{
+    padding:25px;
 }
 
-.uni-grid{
+.price{
+    color:#d4af37;
+    font-size:24px;
+    margin-top:10px;
+}
+
+/* WHY US */
+
+.features{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
 }
 
-.uni-card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.uni-card h3{
-    color:#0A4D8C;
-    margin-bottom:10px;
-}
-
-/* STATS */
-
-.stats{
-    background:#0A4D8C;
-    color:white;
-}
-
-.stats-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
+.feature{
+    background:#151515;
+    padding:40px;
     text-align:center;
+    border-radius:20px;
 }
 
-.stat h3{
-    font-size:48px;
+.feature h3{
+    color:#d4af37;
+    margin-bottom:15px;
 }
 
-/* TESTIMONIALS */
+/* TESTIMONIAL */
 
 .testimonials{
-    background:#f8fbff;
-}
-
-.testimonial-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:25px;
 }
 
 .testimonial{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    background:#151515;
+    padding:40px;
+    border-radius:20px;
+}
+
+.testimonial h4{
+    color:#d4af37;
+    margin-top:20px;
 }
 
 /* CONTACT */
 
-.contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
+.contact{
+    text-align:center;
 }
 
-.contact-info{
-    background:#0A4D8C;
-    color:white;
-    padding:40px;
-    border-radius:15px;
+.contact p{
+    color:#ddd;
+    margin-bottom:30px;
 }
 
-.contact-form input,
-.contact-form textarea{
-    width:100%;
-    padding:15px;
-    margin-bottom:15px;
-    border:1px solid #ddd;
-    border-radius:10px;
-}
-
-.contact-form button{
-    width:100%;
-    border:none;
-    padding:15px;
-    background:#0A4D8C;
-    color:white;
-    border-radius:10px;
-    cursor:pointer;
+.contact a{
+    text-decoration:none;
+    background:#d4af37;
+    color:black;
+    padding:15px 30px;
+    border-radius:40px;
+    font-weight:600;
 }
 
 /* FOOTER */
 
 footer{
-    background:#072f54;
-    color:white;
+    padding:30px;
     text-align:center;
-    padding:25px;
+    border-top:1px solid rgba(255,255,255,.1);
+    color:#aaa;
 }
 
 /* MOBILE */
 
-@media(max-width:768px){
+@media(max-width:900px){
 
-.hero-content h1{
-    font-size:38px;
-}
-
-.hero-content p{
-    font-size:16px;
-}
-
-.about-grid,
-.contact-grid{
+.about{
     grid-template-columns:1fr;
 }
 
-.stats-grid{
-    grid-template-columns:repeat(2,1fr);
+.hero-content h1{
+    font-size:45px;
 }
 
-.menu-btn{
-    display:block;
+.hamburger{
+    display:flex;
 }
 
 .nav-links{
-    position:absolute;
-    top:75px;
-    left:0;
+    position:fixed;
+    right:-100%;
+    top:80px;
+    background:#111;
     width:100%;
-    background:white;
     flex-direction:column;
     text-align:center;
-    display:none;
-    padding:20px 0;
+    padding:40px;
+    transition:.4s;
 }
 
-.nav-links.active{
-    display:flex;
+.menu-toggle:checked ~ .nav-links{
+    right:0;
+}
+
+.contact-btn{
+    display:none;
 }
 }
 </style>
 </head>
-
 <body>
 
 <header>
-<div class="container navbar">
+<nav>
 
-<div class="logo">
-Career <span>Dreamz</span>
-</div>
+<div class="logo"><img src="./assets/images/PS Logo (White).svg"/></div>
 
-<ul class="nav-links" id="menu">
+<input type="checkbox" id="menu" class="menu-toggle">
+
+<label for="menu" class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</label>
+
+<ul class="nav-links">
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
+<li><a href="#properties">Properties</a></li>
 <li><a href="#services">Services</a></li>
-<li><a href="#universities">Universities</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 
-<div class="menu-btn" id="menuBtn">☰</div>
+<a href="#contact" class="contact-btn">Get In Touch</a>
 
-</div>
+</nav>
 </header>
 
-<!-- HERO -->
 
 <section class="hero" id="home">
 
-<div class="slider">
-
-<div class="slide active">
-<img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80">
-</div>
-
-<div class="slide">
-<img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80">
-</div>
-
-<div class="slide">
-<img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=80">
-</div>
-
-</div>
-
-<div class="hero-overlay">
-
 <div class="hero-content">
-
-<h1>Shape Your Future With Career Dreamz</h1>
+<h1>Luxury <span>Real Estate</span><br>For Modern Living</h1>
 
 <p>
-Trusted educational consultancy helping students secure
-admissions in leading colleges and universities across
-Karnataka and Tamil Nadu.
+Discover premium homes and investment opportunities with timeless elegance and world-class service.
 </p>
 
-<a href="#contact" class="btn">
-Get Free Counselling
+<a href="#properties" class="hero-btn">
+Explore Properties
 </a>
 
 </div>
 
-</div>
-
 </section>
 
-<!-- ABOUT -->
 
-<section class="about" id="about">
+<section id="about">
 
-<div class="container">
+<h2 class="section-title">
+About <span>Us</span>
+</h2>
 
-<div class="section-title">
-<h2>About Career Dreamz</h2>
-<p>Your Trusted Education Partner</p>
-</div>
+<div class="about">
 
-<div class="about-grid">
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000">
 
-<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80">
-
-<div class="about-text">
-
-<h3>Guiding Students Towards Success</h3>
+<div class="about-content">
 
 <p>
-Career Dreamz specializes in helping students find the
-right college, course, and career path. We provide
-expert guidance for admissions into top institutions
-across Karnataka and Tamil Nadu.
+Prestige Estates is dedicated to delivering luxury homes and exceptional investment opportunities. We combine modern architecture, premium locations, and trusted expertise to create unmatched living experiences.
 </p>
-
-<br>
-
-<p>
-From engineering and medical programs to arts,
-science, management, and professional courses,
-our counselors help students make informed decisions.
-</p>
-
-</div>
 
 </div>
 
@@ -476,250 +393,126 @@ our counselors help students make informed decisions.
 
 </section>
 
-<!-- SERVICES -->
+
+<section id="properties">
+
+<h2 class="section-title">
+Featured <span>Properties</span>
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1000">
+<div class="card-content">
+<h3>Modern Villa</h3>
+<p>Dubai, UAE</p>
+<div class="price">$1.2M</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600047509782-20d39509f26d?w=1000">
+<div class="card-content">
+<h3>Luxury Apartment</h3>
+<p>New York, USA</p>
+<div class="price">$850K</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1000">
+<div class="card-content">
+<h3>Premium Residence</h3>
+<p>London, UK</p>
+<div class="price">$2.1M</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
 
 <section id="services">
 
-<div class="container">
+<h2 class="section-title">
+Why <span>Choose Us</span>
+</h2>
 
-<div class="section-title">
-<h2>Our Services</h2>
-<p>Complete Admission Assistance</p>
+<div class="features">
+
+<div class="feature">
+<h3>Premium Locations</h3>
+<p>Carefully selected properties in the finest neighborhoods.</p>
 </div>
 
-<div class="service-grid">
-
-<div class="card">
-<h3>Engineering Admissions</h3>
-<p>B.Tech & BE admissions guidance.</p>
+<div class="feature">
+<h3>Trusted Advisors</h3>
+<p>Experienced professionals guiding every investment.</p>
 </div>
 
-<div class="card">
-<h3>Medical Courses</h3>
-<p>MBBS, BDS, Nursing & Allied Health.</p>
-</div>
-
-<div class="card">
-<h3>MBA & Management</h3>
-<p>Business and management programs.</p>
-</div>
-
-<div class="card">
-<h3>Career Counselling</h3>
-<p>Personalized career planning support.</p>
-</div>
-
+<div class="feature">
+<h3>Luxury Living</h3>
+<p>Elegant spaces designed with sophistication.</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- UNIVERSITIES -->
 
-<section class="universities" id="universities">
+<section>
 
-<div class="container">
+<h2 class="section-title">
+Client <span>Testimonials</span>
+</h2>
 
-<div class="section-title">
-<h2>Popular Universities</h2>
-<p>Karnataka & Tamil Nadu Institutions</p>
-</div>
-
-<div class="uni-grid">
-
-<div class="uni-card">
-<h3>Karnataka Colleges</h3>
-<p>Engineering, Medical and Management institutions across Bangalore, Mysore, Mangalore and more.</p>
-</div>
-
-<div class="uni-card">
-<h3>Tamil Nadu Colleges</h3>
-<p>Leading universities and colleges in Chennai, Coimbatore, Trichy and Madurai.</p>
-</div>
-
-<div class="uni-card">
-<h3>Professional Programs</h3>
-<p>Programs in Technology, Healthcare, Commerce and Arts.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- STATS -->
-
-<section class="stats">
-
-<div class="container">
-
-<div class="stats-grid">
-
-<div class="stat">
-<h3>5000+</h3>
-<p>Students Guided</p>
-</div>
-
-<div class="stat">
-<h3>300+</h3>
-<p>Partner Colleges</p>
-</div>
-
-<div class="stat">
-<h3>95%</h3>
-<p>Admission Success</p>
-</div>
-
-<div class="stat">
-<h3>10+</h3>
-<p>Years Experience</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- TESTIMONIALS -->
-
-<section class="testimonials">
-
-<div class="container">
-
-<div class="section-title">
-<h2>Student Success Stories</h2>
-</div>
-
-<div class="testimonial-grid">
+<div class="testimonials">
 
 <div class="testimonial">
 <p>
-"Career Dreamz helped me secure admission in my
-dream engineering college. The guidance was excellent."
+"Outstanding service and beautiful properties. Highly recommended."
 </p>
-<br>
-<strong>- Rahul</strong>
+<h4>— John Smith</h4>
 </div>
 
 <div class="testimonial">
 <p>
-"The counseling process was smooth and transparent.
-Highly recommended."
+"Professional guidance and smooth transactions from start to finish."
 </p>
-<br>
-<strong>- Fathima</strong>
-</div>
-
-<div class="testimonial">
-<p>
-"They helped me choose the right course and college
-based on my interests."
-</p>
-<br>
-<strong>- Arjun</strong>
-</div>
-
+<h4>— Emma Wilson</h4>
 </div>
 
 </div>
 
 </section>
 
-<!-- CONTACT -->
 
 <section id="contact">
 
-<div class="container">
+<h2 class="section-title">
+Contact <span>Us</span>
+</h2>
 
-<div class="section-title">
-<h2>Contact Us</h2>
-<p>Book Your Free Counselling Session</p>
-</div>
-
-<div class="contact-grid">
-
-<div class="contact-info">
-
-<h3>Career Dreamz</h3>
-
-<br>
-
-<p>📍 Your Office Address</p>
-<p>📞 +91 XXXXX XXXXX</p>
-<p>✉ info@careerdreamz.com</p>
-
-<br>
+<div class="contact">
 
 <p>
-Helping students build successful futures through
-quality education guidance.
+Ready to find your dream property?
 </p>
 
-</div>
-
-<form class="contact-form">
-
-<input type="text" placeholder="Full Name">
-
-<input type="email" placeholder="Email Address">
-
-<input type="tel" placeholder="Phone Number">
-
-<textarea rows="5" placeholder="Tell us about your requirements"></textarea>
-
-<button type="submit">
-Send Inquiry
-</button>
-
-</form>
-
-</div>
+<a href="#">
+Call Now</a>
 
 </div>
 
 </section>
 
 <footer>
-© 2026 Career Dreamz. All Rights Reserved.
+
+© 2026 Prestige Estates. All Rights Reserved.
+
 </footer>
-
-<script>
-
-const menuBtn = document.getElementById('menuBtn');
-const menu = document.getElementById('menu');
-
-menuBtn.addEventListener('click',()=>{
-menu.classList.toggle('active');
-});
-
-document.querySelectorAll('.nav-links a').forEach(link=>{
-link.addEventListener('click',()=>{
-menu.classList.remove('active');
-});
-});
-
-const slides = document.querySelectorAll('.slide');
-
-let current = 0;
-
-setInterval(()=>{
-
-slides[current].classList.remove('active');
-
-current++;
-
-if(current >= slides.length){
-current = 0;
-}
-
-slides[current].classList.add('active');
-
-},4000);
-
-</script>
 
 </body>
 </html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492.59 516.61">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #252525;
+      }
+
+      .cls-2 {
+        letter-spacing: .35em;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        font-size: 63.27px;
+      }
+
+      .cls-4, .cls-5 {
+        font-family: Montserrat-SemiBold, Montserrat;
+        font-weight: 600;
+      }
+
+      .cls-5 {
+        font-size: 32px;
+        letter-spacing: .85em;
+      }
+
+      .cls-6 {
+        letter-spacing: .34em;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" width="492.59" height="517.06"/>
+  <g>
+    <g>
+      <polygon class="cls-3" points="322.84 248.58 267.88 195.32 221.69 195.28 221.71 168.12 305.85 168.14 305.99 204.05 322.86 220.11 322.86 150.89 245.64 150.92 245.54 62.79 168.88 122.13 168.88 317.06 202.47 317.05 202.5 300.07 185.63 299.94 185.62 130.24 229.03 96.79 229.07 150.92 205.28 150.94 205.28 212.37 260.71 212.4 305.95 256.23 305.9 295.28 300.44 300.06 249.91 300.11 249.94 317.09 307.69 317.06 322.9 303.82 322.84 248.58"/>
+      <rect class="cls-3" x="216.22" y="229.46" width="16.77" height="87.61"/>
+    </g>
+    <rect class="cls-3" x="70.7" y="433.35" width="45.14" height="3.53"/>
+    <rect class="cls-3" x="371.65" y="433.34" width="45.16" height="3.54"/>
+    <text class="cls-4" transform="translate(64.11 401.77) scale(1.2 1)"><tspan class="cls-6" x="0" y="0">P</tspan><tspan class="cls-2" x="67.44" y="0">RIME</tspan></text>
+    <text class="cls-5" transform="translate(142.65 445.54) scale(1.06 1)"><tspan x="0" y="0">SITES</tspan></text>
+  </g>
+</svg>
