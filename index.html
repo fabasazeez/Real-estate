@@ -1,518 +1,654 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Prestige Estates</title>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#0b0b0b;
-    color:white;
-}
-
-/* HEADER */
-
-header{
-    position:fixed;
-    width:100%;
-    top:0;
-    left:0;
-    background:rgba(0,0,0,.9);
-    backdrop-filter:blur(10px);
-    z-index:1000;
-    border-bottom:1px solid rgba(212,175,55,.2);
-}
-
-nav{
-    max-width:1300px;
-    margin:auto;
-    padding:18px 7%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.logo img{
-    height: 55px;       /* Desktop size */
-    width: auto;
-    object-fit: contain;
-    transition: .3s ease;
-}
-
-.logo img:hover{
-    transform: scale(1.05);
-}
-
-.nav-links{
-    display:flex;
-    gap:40px;
-    list-style:none;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:white;
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:#d4af37;
-}
-
-.contact-btn{
-    background:#d4af37;
-    color:black;
-    padding:12px 25px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:600;
-}
-
-.menu-toggle{
-    display:none;
-}
-
-.hamburger{
-    display:none;
-    flex-direction:column;
-    cursor:pointer;
-}
-
-.hamburger span{
-    width:28px;
-    height:3px;
-    background:white;
-    margin:4px 0;
-}
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:100px 8%;
-    background:
-    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
-    url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1600");
-    background-size:cover;
-    background-position:center;
-}
-
-.hero-content h1{
-    font-size:70px;
-    line-height:1.2;
-}
-
-.hero-content span{
-    color:#d4af37;
-}
-
-.hero-content p{
-    margin:25px auto;
-    max-width:700px;
-    color:#ddd;
-    line-height:1.8;
-}
-
-.hero-btn{
-    display:inline-block;
-    padding:16px 35px;
-    background:#d4af37;
-    color:black;
-    text-decoration:none;
-    border-radius:40px;
-    font-weight:600;
-}
-
-/* COMMON */
-
-section{
-    padding:100px 8%;
-}
-
-.section-title{
-    text-align:center;
-    font-size:45px;
-    margin-bottom:60px;
-}
-
-.section-title span{
-    color:#d4af37;
-}
-
-/* ABOUT */
-
-.about{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
-}
-
-.about img{
-    width:100%;
-    border-radius:20px;
-}
-
-.about-content p{
-    color:#cfcfcf;
-    line-height:1.9;
-}
-
-/* PROPERTIES */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:#151515;
-    border-radius:20px;
-    overflow:hidden;
-    transition:.4s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-}
-
-.card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
-
-.card-content{
-    padding:25px;
-}
-
-.price{
-    color:#d4af37;
-    font-size:24px;
-    margin-top:10px;
-}
-
-/* WHY US */
-
-.features{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.feature{
-    background:#151515;
-    padding:40px;
-    text-align:center;
-    border-radius:20px;
-}
-
-.feature h3{
-    color:#d4af37;
-    margin-bottom:15px;
-}
-
-/* TESTIMONIAL */
-
-.testimonials{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-}
-
-.testimonial{
-    background:#151515;
-    padding:40px;
-    border-radius:20px;
-}
-
-.testimonial h4{
-    color:#d4af37;
-    margin-top:20px;
-}
-
-/* CONTACT */
-
-.contact{
-    text-align:center;
-}
-
-.contact p{
-    color:#ddd;
-    margin-bottom:30px;
-}
-
-.contact a{
-    text-decoration:none;
-    background:#d4af37;
-    color:black;
-    padding:15px 30px;
-    border-radius:40px;
-    font-weight:600;
-}
-
-/* FOOTER */
-
-footer{
-    padding:30px;
-    text-align:center;
-    border-top:1px solid rgba(255,255,255,.1);
-    color:#aaa;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-.about{
-    grid-template-columns:1fr;
-}
-
-.hero-content h1{
-    font-size:45px;
-}
-
-.hamburger{
-    display:flex;
-}
-
-.nav-links{
-    position:fixed;
-    right:-100%;
-    top:80px;
-    background:#111;
-    width:100%;
-    flex-direction:column;
-    text-align:center;
-    padding:40px;
-    transition:.4s;
-}
-
-.menu-toggle:checked ~ .nav-links{
-    right:0;
-}
-
-.contact-btn{
-    display:none;
-}
-}
-</style>
-</head>
-<body>
-
-<header>
-<nav>
-
-<div class="logo"><img src="./assets/images/PS Logo (White).svg"/></div>
-
-<input type="checkbox" id="menu" class="menu-toggle">
-
-<label for="menu" class="hamburger">
-<span></span>
-<span></span>
-<span></span>
-</label>
-
-<ul class="nav-links">
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#properties">Properties</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-
-<a href="#contact" class="contact-btn">Get In Touch</a>
-
-</nav>
-</header>
-
-
-<section class="hero" id="home">
-
-<div class="hero-content">
-<h1>Luxury <span>Real Estate</span><br>For Modern Living</h1>
-
-<p>
-Discover premium homes and investment opportunities with timeless elegance and world-class service.
-</p>
-
-<a href="#properties" class="hero-btn">
-Explore Properties
-</a>
-
-</div>
-
-</section>
-
-
-<section id="about">
-
-<h2 class="section-title">
-About <span>Us</span>
-</h2>
-
-<div class="about">
-
-<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000">
-
-<div class="about-content">
-
-<p>
-Prestige Estates is dedicated to delivering luxury homes and exceptional investment opportunities. We combine modern architecture, premium locations, and trusted expertise to create unmatched living experiences.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section id="properties">
-
-<h2 class="section-title">
-Featured <span>Properties</span>
-</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1000">
-<div class="card-content">
-<h3>Modern Villa</h3>
-<p>Dubai, UAE</p>
-<div class="price">$1.2M</div>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1600047509782-20d39509f26d?w=1000">
-<div class="card-content">
-<h3>Luxury Apartment</h3>
-<p>New York, USA</p>
-<div class="price">$850K</div>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1000">
-<div class="card-content">
-<h3>Premium Residence</h3>
-<p>London, UK</p>
-<div class="price">$2.1M</div>
-</div>
-</div>
-
-</div>
-
-</section>
-
-
-<section id="services">
-
-<h2 class="section-title">
-Why <span>Choose Us</span>
-</h2>
-
-<div class="features">
-
-<div class="feature">
-<h3>Premium Locations</h3>
-<p>Carefully selected properties in the finest neighborhoods.</p>
-</div>
-
-<div class="feature">
-<h3>Trusted Advisors</h3>
-<p>Experienced professionals guiding every investment.</p>
-</div>
-
-<div class="feature">
-<h3>Luxury Living</h3>
-<p>Elegant spaces designed with sophistication.</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section>
-
-<h2 class="section-title">
-Client <span>Testimonials</span>
-</h2>
-
-<div class="testimonials">
-
-<div class="testimonial">
-<p>
-"Outstanding service and beautiful properties. Highly recommended."
-</p>
-<h4>— John Smith</h4>
-</div>
-
-<div class="testimonial">
-<p>
-"Professional guidance and smooth transactions from start to finish."
-</p>
-<h4>— Emma Wilson</h4>
-</div>
-
-</div>
-
-</section>
-
-
-<section id="contact">
-
-<h2 class="section-title">
-Contact <span>Us</span>
-</h2>
-
-<div class="contact">
-
-<p>
-Ready to find your dream property?
-</p>
-
-<a href="#">
-Call Now</a>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2026 Prestige Estates. All Rights Reserved.
-
-</footer>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prestige Estates | Luxury Real Estate</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ===================== -->
+    <!-- PRELOADER -->
+    <!-- ===================== -->
+
+    <div id="preloader">
+      <div class="loader-logo">PRIME SITES</div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- HEADER -->
+    <!-- ===================== -->
+
+    <header class="header" id="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <span>Prime</span>
+            <small>Sites</small>
+          </div>
+
+          <nav class="nav-menu">
+            <ul>
+              <li>
+                <a href="#home">Home</a>
+              </li>
+
+              <li>
+                <a href="#about">About</a>
+              </li>
+
+              <li>
+                <a href="#properties">Properties</a>
+              </li>
+
+              <li>
+                <a href="#services">Services</a>
+              </li>
+
+              <li>
+                <a href="#locations">Locations</a>
+              </li>
+
+              <li>
+                <a href="#team">Team</a>
+              </li>
+
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="nav-actions">
+            <a href="#" class="gold-btn"> Book Consultation </a>
+
+            <button id="mobileMenuBtn">☰</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================== -->
+    <!-- HERO SECTION -->
+    <!-- ===================== -->
+
+    <section class="hero-section" id="home">
+      <div class="hero-overlay"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-tag"> Luxury Properties Across Dubai </span>
+
+          <h1>Discover Exceptional Real Estate</h1>
+
+          <p>
+            Explore premium villas, penthouses, beachfront residences and
+            high-yield investment opportunities.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#properties" class="gold-btn"> View Properties </a>
+
+            <a href="#contact" class="outline-btn"> Contact Us </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- SEARCH PANEL -->
+    <!-- ===================== -->
+
+    <section class="search-panel">
+      <div class="container">
+        <div class="search-card">
+          <div class="search-item">
+            <label>Location</label>
+
+            <select>
+              <option>Dubai Marina</option>
+              <option>Palm Jumeirah</option>
+              <option>Downtown Dubai</option>
+              <option>Business Bay</option>
+            </select>
+          </div>
+
+          <div class="search-item">
+            <label>Property Type</label>
+
+            <select>
+              <option>Apartment</option>
+              <option>Villa</option>
+              <option>Penthouse</option>
+              <option>Townhouse</option>
+            </select>
+          </div>
+
+          <div class="search-item">
+            <label>Price Range</label>
+
+            <select>
+              <option>$500K+</option>
+              <option>$1M+</option>
+              <option>$2M+</option>
+              <option>$5M+</option>
+            </select>
+          </div>
+
+          <div class="search-item">
+            <label>Bedrooms</label>
+
+            <select>
+              <option>1+</option>
+              <option>2+</option>
+              <option>3+</option>
+              <option>5+</option>
+            </select>
+          </div>
+
+          <button class="search-btn">Search</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- STATS -->
+    <!-- ===================== -->
+
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-box">
+            <h2 class="counter" data-target="1500">0</h2>
+            <p>Luxury Properties</p>
+          </div>
+
+          <div class="stat-box">
+            <h2 class="counter" data-target="850">0</h2>
+            <p>Happy Clients</p>
+          </div>
+
+          <div class="stat-box">
+            <h2 class="counter" data-target="18">0</h2>
+            <p>Years Experience</p>
+          </div>
+
+          <div class="stat-box">
+            <h2 class="counter" data-target="95">0</h2>
+            <p>Success Rate</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- ABOUT -->
+    <!-- ===================== -->
+
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+              alt="Luxury Property"
+            />
+          </div>
+
+          <div class="about-content">
+            <span class="section-tag"> ABOUT US </span>
+
+            <h2>Elevating Luxury Living</h2>
+
+            <p>
+              We specialize in premium real estate, connecting discerning buyers
+              with extraordinary properties in the world's most desirable
+              destinations.
+            </p>
+
+            <p>
+              From beachfront villas to skyline penthouses, our portfolio offers
+              unparalleled luxury and investment potential.
+            </p>
+
+            <a href="#" class="gold-btn"> Learn More </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- FEATURED PROPERTIES -->
+    <!-- ===================== -->
+
+    <section class="properties-section" id="properties">
+      <div class="container">
+        <div class="section-heading">
+          <span> FEATURED COLLECTION </span>
+
+          <h2>Exclusive Properties</h2>
+        </div>
+
+        <div class="property-grid">
+          <!-- PROPERTY 1 -->
+
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"
+                alt=""
+              />
+
+              <span class="property-badge"> Featured </span>
+            </div>
+
+            <div class="property-content">
+              <h3>Palm Luxury Villa</h3>
+
+              <p>Palm Jumeirah</p>
+
+              <div class="property-meta">
+                <span>5 Beds</span>
+                <span>6 Baths</span>
+                <span>8500 sqft</span>
+              </div>
+
+              <h4>$5.2M</h4>
+            </div>
+          </div>
+
+          <!-- PROPERTY 2 -->
+
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"
+                alt=""
+              />
+            </div>
+
+            <div class="property-content">
+              <h3>Marina Penthouse</h3>
+
+              <p>Dubai Marina</p>
+
+              <div class="property-meta">
+                <span>4 Beds</span>
+                <span>5 Baths</span>
+                <span>5200 sqft</span>
+              </div>
+
+              <h4>$3.9M</h4>
+            </div>
+          </div>
+
+          <!-- PROPERTY 3 -->
+
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="https://images.unsplash.com/photo-1494526585095-c41746248156"
+                alt=""
+              />
+            </div>
+
+            <div class="property-content">
+              <h3>Downtown Residence</h3>
+
+              <p>Downtown Dubai</p>
+
+              <div class="property-meta">
+                <span>3 Beds</span>
+                <span>4 Baths</span>
+                <span>3500 sqft</span>
+              </div>
+
+              <h4>$2.6M</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- SERVICES -->
+    <!-- ===================== -->
+
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <span> OUR SERVICES </span>
+
+          <h2>Tailored Real Estate Solutions</h2>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🏡</div>
+
+            <h3>Property Sales</h3>
+
+            <p>
+              Exclusive luxury residential and commercial property transactions.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">📈</div>
+
+            <h3>Investment Advisory</h3>
+
+            <p>Strategic property investment planning for maximum returns.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🔑</div>
+
+            <h3>Property Management</h3>
+
+            <p>Complete management solutions for premium real estate assets.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🌍</div>
+
+            <h3>International Buyers</h3>
+
+            <p>Dedicated support for overseas investors and home buyers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- LOCATIONS -->
+    <!-- ===================== -->
+
+    <section class="locations-section" id="locations">
+      <div class="container">
+        <div class="section-heading">
+          <span> PRIME LOCATIONS </span>
+
+          <h2>Explore Elite Communities</h2>
+        </div>
+
+        <div class="locations-grid">
+          <div class="location-card">
+            <img
+              src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c"
+              alt=""
+            />
+
+            <div class="location-overlay">
+              <h3>Palm Jumeirah</h3>
+
+              <p>120 Properties</p>
+            </div>
+          </div>
+
+          <div class="location-card">
+            <img
+              src="https://images.unsplash.com/photo-1518684079-3c830dcef090"
+              alt=""
+            />
+
+            <div class="location-overlay">
+              <h3>Dubai Marina</h3>
+
+              <p>96 Properties</p>
+            </div>
+          </div>
+
+          <div class="location-card">
+            <img
+              src="https://images.unsplash.com/photo-1460317442991-0ec209397118"
+              alt=""
+            />
+
+            <div class="location-overlay">
+              <h3>Downtown Dubai</h3>
+
+              <p>150 Properties</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- TEAM -->
+    <!-- ===================== -->
+
+    <section class="team-section" id="team">
+      <div class="container">
+        <div class="section-heading">
+          <span> OUR EXPERTS </span>
+
+          <h2>Meet The Leadership Team</h2>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-card">
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt=""
+            />
+
+            <h3>Sarah Johnson</h3>
+
+            <p>Managing Director</p>
+          </div>
+
+          <div class="team-card">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" />
+
+            <h3>Michael Reed</h3>
+
+            <p>Head Of Sales</p>
+          </div>
+
+          <div class="team-card">
+            <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="" />
+
+            <h3>David Wilson</h3>
+
+            <p>Investment Advisor</p>
+          </div>
+
+          <div class="team-card">
+            <img
+              src="https://randomuser.me/api/portraits/women/65.jpg"
+              alt=""
+            />
+
+            <h3>Emma Clark</h3>
+
+            <p>Luxury Property Consultant</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- TESTIMONIALS -->
+    <!-- ===================== -->
+
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-heading">
+          <span> CLIENT REVIEWS </span>
+
+          <h2>What Our Clients Say</h2>
+        </div>
+
+        <div class="testimonial-slider">
+          <div class="testimonial-slide active">
+            <p>
+              "Prestige Estates helped us secure our dream waterfront villa. The
+              entire experience was seamless."
+            </p>
+
+            <h4>James Thompson</h4>
+          </div>
+
+          <div class="testimonial-slide">
+            <p>
+              "Exceptional service and access to premium investment
+              opportunities."
+            </p>
+
+            <h4>Olivia Parker</h4>
+          </div>
+
+          <div class="testimonial-slide">
+            <p>"Professional team and outstanding market expertise."</p>
+
+            <h4>Daniel Carter</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- CTA -->
+    <!-- ===================== -->
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready To Find Your Dream Property?</h2>
+
+          <p>
+            Schedule a private consultation with our luxury property experts.
+          </p>
+
+          <a href="#contact" class="gold-btn"> Get Started </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- CONTACT -->
+    <!-- ===================== -->
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span> CONTACT US </span>
+
+            <h2>Let's Discuss Your Next Investment</h2>
+
+            <p>
+              Reach out to our team for exclusive listings and expert guidance.
+            </p>
+
+            <ul>
+              <li>📍 Downtown Business District</li>
+
+              <li>📞 +971 50 123 4567</li>
+
+              <li>✉ info@prestigeestates.com</li>
+            </ul>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <form class="contact-form">
+              <input type="text" placeholder="Full Name" />
+
+              <input type="email" placeholder="Email Address" />
+
+              <input type="text" placeholder="Phone Number" />
+
+              <textarea
+                placeholder="Tell us about your requirements"
+              ></textarea>
+
+              <button type="submit" class="gold-btn">Submit Inquiry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- NEWSLETTER -->
+    <!-- ===================== -->
+
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-box">
+          <h2>Subscribe For Exclusive Listings</h2>
+
+          <form>
+            <input type="email" placeholder="Enter Your Email" />
+
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- FOOTER -->
+    <!-- ===================== -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h3>PRESTIGE ESTATES</h3>
+
+            <p>
+              Luxury real estate specialists delivering exceptional results.
+            </p>
+          </div>
+
+          <div>
+            <h4>Quick Links</h4>
+
+            <ul>
+              <li>Home</li>
+
+              <li>About</li>
+
+              <li>Properties</li>
+
+              <li>Contact</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Contact</h4>
+
+            <p>+971 50 123 4567</p>
+
+            <p>info@prestigeestates.com</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Prestige Estates. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+
+    <button id="backToTop">↑</button>
+
+    <a href="#" class="whatsapp-btn"> WhatsApp </a>
+
+    <script src="script.js"></script>
+  </body>
 </html>
