@@ -224,9 +224,12 @@ revealOnScroll();
 /* ==========================
    CONTACT FORM
 ========================== */
+/* ==========================
+CONTACT FORM
+========================== */
 
 const contactForm =
-  document.querySelector(".contact-form");
+document.querySelector(".contact-form");
 
 if (contactForm) {
 
@@ -234,20 +237,16 @@ if (contactForm) {
     "submit",
     function(e) {
 
-      e.preventDefault();
-
       const inputs =
         contactForm.querySelectorAll(
-          "input, textarea"
+          "input[required], textarea[required]"
         );
 
       let valid = true;
 
       inputs.forEach(input => {
 
-        if (
-          input.value.trim() === ""
-        ) {
+        if (input.value.trim() === "") {
           valid = false;
         }
 
@@ -255,19 +254,14 @@ if (contactForm) {
 
       if (!valid) {
 
-        alert(
-          "Please fill all fields."
-        );
+        e.preventDefault();
+
+        alert("Please fill all fields.");
 
         return;
       }
 
-      alert(
-        "Thank you! Your inquiry has been submitted."
-      );
-
-      contactForm.reset();
-
+      // Allow normal form submission to FormSubmit
     }
   );
 }
