@@ -1,7 +1,7 @@
 /* =====================================
    GLOBAL STYLES
 ===================================== */
-
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&display=swap');
 :root {
   --black: #0a0a0a;
   --black-light: #141414;
@@ -11,6 +11,118 @@
   --gray: #8f8f8f;
   --border: rgba(212, 175, 55, 0.25);
   --transition: all 0.35s ease;
+}
+/* ====================================
+   TYPOGRAPHY SYSTEM
+==================================== */
+
+:root {
+  --font-heading: "Fraunces", serif;
+  --font-ui: "Montserrat", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* BODY */
+
+
+
+/* MAIN HEADINGS */
+
+h1,
+.hero-content h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+/* SECTION TITLES */
+
+h2,
+.section-heading h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+/* CARD TITLES */
+
+.property-content h3,
+.location-overlay h3,
+.service-card h3 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* NAVIGATION */
+
+.nav-menu a {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* BUTTONS */
+
+.gold-btn,
+.property-badge,
+.property-meta,
+.footer h4 {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* SECTION LABELS */
+
+.section-heading span,
+.contact-info span {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* BODY COPY */
+
+p,
+.property-content p,
+.location-overlay p,
+.contact-info p,
+.footer p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  color: #bdbdbd;
+}
+
+/* FOOTER LINKS */
+
+.footer li,
+.footer a {
+  font-family: var(--font-body);
+  font-size: 15px;
+}
+
+/* PRICES */
+
+.property-content h4 {
+  font-family: var(--font-ui);
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--gold);
 }
 
 * {
@@ -635,7 +747,7 @@ h4 {
   overflow-x: auto;
   overflow-y: hidden;
 
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -643,6 +755,20 @@ h4 {
 
 .property-slider::-webkit-scrollbar {
   display: none;
+}
+@media (max-width: 768px) {
+  .property-slider {
+    overflow: hidden;
+  }
+
+  .property-track {
+    gap: 20px;
+  }
+
+  .property-card {
+    width: calc(100vw - 50px);
+    max-width: 100%;
+  }
 }
 
 /* ====================================
@@ -807,6 +933,15 @@ h4 {
   .property-content h4 {
     font-size: 26px;
   }
+}
+.property-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.property-card-link:hover {
+  color: inherit;
 }
 
 /* ====================================
