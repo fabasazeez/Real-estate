@@ -385,6 +385,3 @@ document
 
   });
 
-console.log(
-  "Prestige Estates Loaded Successfully"
-);

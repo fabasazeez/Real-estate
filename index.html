@@ -35,7 +35,7 @@
       <div class="container">
         <div class="navbar">
           <div class="logo">
-            <img src="./Images/PS Logo (Gold - Horizontal).svg" />
+            <img src="./Images/PrimeSites Logo (Gold - Horizontal).svg" />
           </div>
 
           <nav class="nav-menu">
@@ -71,7 +71,7 @@
           </nav>
 
           <div class="nav-actions">
-            <a href="#" class="gold-btn"> Book Consultation </a>
+            <a href="#contact" class="gold-btn"> Book Consultation </a>
 
             <button id="mobileMenuBtn">☰</button>
           </div>
@@ -179,7 +179,7 @@
               smarter investment decisions.
             </p>
 
-            <a href="#" class="gold-btn"> Learn More </a>
+            <a href="#contact" class="gold-btn"> Learn More </a>
           </div>
         </div>
       </div>
@@ -632,7 +632,7 @@
             Schedule a private consultation with our luxury property experts.
           </p>
 
-          <a href="#contact" class="gold-btn"> Get Started </a>
+          <a href="#contact" class="gold-btns"> Get Started </a>
         </div>
       </div>
     </section>
@@ -717,7 +717,9 @@
       <div class="container">
         <div class="footer-grid">
           <div>
-            <h3>PRIME SITES</h3>
+            <div class="logo-footer">
+            <img src="./Images/PrimeSites Logo (Gold - Horizontal).svg" />
+          </div>
 
             <p>
               Luxury real estate specialists delivering exceptional results.
@@ -741,9 +743,48 @@
           <div>
             <h4>Contact</h4>
 
-            <p>+91 98765 43210</p>
+            <p>+91 9995318051</p>
 
             <p>info@theprimesties.com</p>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/_primesites_?utm_source=qr&igsh=Y3NlNjlpZ3ZjMmR0"
+                target="_blank"
+                class="social-icon"
+              >
+                <img
+                  src="./Images/instagram-logo-bold-svgrepo-com.svg"
+                  alt="Instagram"
+                />
+              </a>
+
+              <a
+                href="https://www.facebook.com/share/1LKeTgddDk/"
+                target="_blank"
+                class="social-icon"
+              >
+                <img
+                  src="./Images/facebook-boxed-svgrepo-com.svg"
+                  alt="Facebook"
+                />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/prime-sites-39a3a3418?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                target="_blank"
+                class="social-icon"
+              >
+                <img src="./Images/linkedin-svgrepo-com.svg" alt="LinkedIn" />
+              </a>
+              <a
+                href="https://wa.me/919995318051?text=Hi%20Prime%20Sites,%20I'm%20interested%20in%20your%20properties."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon"
+              >
+                <img src="./Images/whatsapp-svgrepo-com.svg" alt="LinkedIn" />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -752,17 +793,35 @@
         </div>
       </div>
     </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileBtn = document.getElementById("mobileMenuBtn");
+  const navMenu = document.querySelector(".nav-menu");
 
-    <!-- Floating Buttons -->
+  mobileBtn.addEventListener("click", function () {
+    navMenu.classList.toggle("active");
+  });
 
-    <a
-      href="https://wa.me/919995318051?text=Hi%20Prime%20Sites,%20I'm%20interested%20in%20your%20properties."
-      target="_blank"
-      rel="noopener noreferrer"
-      class="whatsapp-btn"
-    >
-      WhatsApp
-    </a>
+  // Close menu and scroll to section
+  document.querySelectorAll('.nav-menu a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+      navMenu.classList.remove("active");
+    });
+  });
+});
+</script>
 
     <script src="script.js"></script>
   </body>

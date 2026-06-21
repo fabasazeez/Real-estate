@@ -26,7 +26,7 @@ html {
 body {
   background: var(--black);
   color: var(--white);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
   line-height: 1.7;
 }
@@ -148,7 +148,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .section-heading {
@@ -167,6 +167,50 @@ h4 {
 .section-heading h2 {
   font-size: 56px;
   font-weight: 600;
+}
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 8px;
+
+  transition: all 0.3s ease;
+}
+
+.social-icon img {
+  width: 22px;
+  height: 22px;
+
+  object-fit: contain;
+
+  filter: brightness(0) invert(1);
+
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+
+  transform: translateY(-4px);
+}
+
+.social-icon:hover img {
+  filter: brightness(0);
 }
 
 .gold-btn {
@@ -211,27 +255,27 @@ h4 {
 @media (max-width: 768px) {
   .gold-btns {
     display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--gold);
-  color: var(--black);
-  padding: 10px 25px;
-  border-radius: 50px;
-  font-weight: 700;
-  transition: var(--transition);
-  border: none;
-  cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background: var(--gold);
+    color: var(--black);
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
   }
 }
 @media (max-width: 768px) {
   .gold-btn {
-  display: none;
+    display: none;
   }
 }
 
 .gold-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(212,175,55,.25);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.25);
 }
 
 .outline-btn {
@@ -268,7 +312,7 @@ h4 {
   color: var(--gold);
   font-size: 48px;
   letter-spacing: 10px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
 }
 
 /* =====================================
@@ -285,7 +329,7 @@ h4 {
 }
 
 .header.scrolled {
-  background: rgba(10,10,10,.95);
+  background: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
 }
@@ -296,13 +340,15 @@ h4 {
   justify-content: space-between;
   align-items: center;
 }
-
+.logo img {
+  width: 80% !important;
+}
 .logo span {
   display: block;
   font-size: 30px;
   color: var(--gold);
   letter-spacing: 3px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .logo small {
@@ -338,6 +384,55 @@ h4 {
   color: white;
   font-size: 28px;
 }
+@media (max-width: 768px) {
+  .header {
+    background-color: #000;
+  }
+  #mobileMenuBtn {
+    display: block;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 90px;
+    left: 0;
+
+    width: 100%;
+
+    background: black;
+
+    display: none;
+
+    z-index: 9999;
+  }
+
+  .nav-menu.active {
+    display: block;
+  }
+
+  .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu a {
+    display: block;
+    color: white;
+    font-size: 18px;
+  }
+}
 
 /* =====================================
    HERO SECTION
@@ -345,8 +440,7 @@ h4 {
 
 .hero-section {
   height: 100vh;
-  background:
-    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c")
+  background: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c")
     center center / cover no-repeat;
   position: relative;
   display: flex;
@@ -356,11 +450,10 @@ h4 {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background:
-  linear-gradient(
+  background: linear-gradient(
     to right,
-    rgba(0,0,0,.85),
-    rgba(0,0,0,.45)
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.45)
   );
 }
 
@@ -377,6 +470,11 @@ h4 {
   color: var(--gold);
   margin-bottom: 25px;
 }
+@media (max-width: 768px) {
+  .hero-tag {
+    margin-top: 3rem !important;
+  }
+}
 
 .hero-content h1 {
   font-size: 60px;
@@ -384,7 +482,7 @@ h4 {
   margin-bottom: 25px;
 }
 @media (max-width: 768px) {
-  .hero-content h1{
+  .hero-content h1 {
     font-size: 30px !important;
   }
 }
@@ -412,13 +510,12 @@ h4 {
 }
 
 .search-card {
-  background: rgba(20,20,20,.95);
+  background: rgba(20, 20, 20, 0.95);
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 30px;
   display: grid;
-  grid-template-columns:
-    repeat(5,1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
 }
 
@@ -459,7 +556,7 @@ h4 {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
@@ -498,8 +595,7 @@ h4 {
 .about-image img {
   border-radius: 18px;
   overflow: hidden;
-  box-shadow:
-    0 20px 60px rgba(0,0,0,.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .about-content .section-tag {
@@ -684,7 +780,7 @@ h4 {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
 
@@ -694,13 +790,13 @@ h4 {
   border-radius: 18px;
   text-align: center;
   transition: var(--transition);
-  background: rgba(255,255,255,.02);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .service-card:hover {
   transform: translateY(-10px);
   border-color: var(--gold);
-  background: rgba(212,175,55,.05);
+  background: rgba(212, 175, 55, 0.05);
 }
 
 .service-icon {
@@ -727,7 +823,7 @@ h4 {
 
 .locations-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
@@ -740,7 +836,7 @@ h4 {
 .location-card img {
   height: 420px;
   object-fit: cover;
-  transition: transform .7s ease;
+  transition: transform 0.7s ease;
 }
 
 .location-card:hover img {
@@ -750,12 +846,7 @@ h4 {
 .location-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      to top,
-      rgba(0,0,0,.9),
-      rgba(0,0,0,.1)
-    );
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -830,7 +921,7 @@ h4 {
 
 .testimonial-slide {
   display: none;
-  animation: fadeIn .6s ease;
+  animation: fadeIn 0.6s ease;
 }
 
 .testimonial-slide.active {
@@ -855,12 +946,9 @@ h4 {
 
 .cta-section {
   background:
-  linear-gradient(
-    rgba(0,0,0,.75),
-    rgba(0,0,0,.75)
-  ),
-  url("https://images.unsplash.com/photo-1512917774080-9991f1c4c750")
-  center center/cover;
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("https://images.unsplash.com/photo-1512917774080-9991f1c4c750") center
+      center/cover;
 }
 
 .cta-content {
@@ -979,6 +1067,8 @@ h4 {
    FOOTER
 ===================================== */
 
+/* ================= FOOTER ================= */
+
 .footer {
   background: #000;
   padding-top: 80px;
@@ -988,25 +1078,177 @@ h4 {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 50px;
+  align-items: start;
 }
+
+/* LOGO */
+
+.logo-footer {
+  margin-bottom: 24px;
+}
+
+.logo-footer img {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+
+/* CONTENT */
 
 .footer h3,
 .footer h4 {
   color: var(--gold);
   margin-bottom: 20px;
+  font-size: 22px;
 }
 
 .footer p,
 .footer li {
   color: #cfcfcf;
   margin-bottom: 10px;
+  line-height: 1.7;
 }
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer li {
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.footer li:hover {
+  color: var(--gold);
+}
+
+/* FIRST COLUMN */
+
+.footer-grid > div:first-child p {
+  max-width: 320px;
+}
+
+/* SOCIAL ICONS */
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 8px;
+
+  transition: all 0.3s ease;
+}
+
+.social-icon img {
+  width: 22px;
+  height: 22px;
+
+  object-fit: contain;
+
+  filter: brightness(0) invert(1);
+
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+
+  transform: translateY(-4px);
+}
+
+.social-icon:hover img {
+  filter: brightness(0);
+}
+
+/* FOOTER BOTTOM */
 
 .footer-bottom {
   border-top: 1px solid var(--border);
   margin-top: 60px;
+
   text-align: center;
+
   padding: 25px 0;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #9c9c9c;
+  font-size: 14px;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 30px;
+  }
+
+  .logo-footer img {
+    width: 190px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 60px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .logo-footer {
+    margin-bottom: 20px;
+  }
+
+  .logo-footer img {
+    width: 180px;
+  }
+
+  .footer h4 {
+    margin-bottom: 15px;
+  }
+
+  .social-links {
+    flex-wrap: wrap;
+  }
+
+  .social-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .social-icon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer-bottom {
+    margin-top: 40px;
+    padding: 20px 0;
+  }
 }
 
 /* =====================================
@@ -1017,9 +1259,9 @@ h4 {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: #25d366;
+  background: rgb(179, 153, 9);
   color: white;
-  padding: 14px 20px;
+  padding: 5px 10px;
   border-radius: 50px;
   z-index: 999;
   font-weight: 700;
@@ -1060,7 +1302,6 @@ h4 {
 ===================================== */
 
 @media (max-width: 1100px) {
-
   .property-grid,
   .services-grid,
   .team-grid,
@@ -1079,7 +1320,6 @@ h4 {
 }
 
 @media (max-width: 768px) {
-
   section {
     padding: 80px 0;
   }
