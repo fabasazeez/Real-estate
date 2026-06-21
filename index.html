@@ -23,7 +23,7 @@
 
     <div id="preloader">
       <div class="loader-logo">
-        <img src="./Images/PS Logo (Gold - Horizontal).svg" />
+        <img src="./Images/PrimeSites Logo (Gold - Horizontal).svg" />
       </div>
     </div>
 
@@ -193,7 +193,6 @@
       <div class="container">
         <div class="section-heading">
           <span>FEATURED COLLECTION</span>
-
           <h2>Why Choose Us</h2>
         </div>
 
@@ -243,9 +242,11 @@
                 <h4>80L to 3.5cr</h4>
               </div>
             </div>
+
+            <!-- CARD 4 -->
             <div class="property-card">
               <div class="property-image">
-                <img src="./Images/zMtsKkwKpN-1.webp" alt="Co Evolve" />
+                <img src="./Images/zMtsKkwKpN-1.webp" alt="Icon Homes" />
                 <span class="property-badge">Featured</span>
               </div>
 
@@ -255,11 +256,13 @@
                 <h4>80L to 1.5cr</h4>
               </div>
             </div>
+
+            <!-- CARD 5 -->
             <div class="property-card">
               <div class="property-image">
                 <img
                   src="./Images/Render-Image-Cricket-view.jpg"
-                  alt="Co Evolve"
+                  alt="Trifecta"
                 />
                 <span class="property-badge">Featured</span>
               </div>
@@ -270,11 +273,13 @@
                 <h4>70L to 2.5cr</h4>
               </div>
             </div>
+
+            <!-- CARD 6 -->
             <div class="property-card">
               <div class="property-image">
                 <img
                   src="./Images/Render-Image-Cricket-view.jpg"
-                  alt="Co Evolve"
+                  alt="Manaskanda"
                 />
                 <span class="property-badge">Featured</span>
               </div>
@@ -285,9 +290,14 @@
                 <h4>1cr to 3.5cr</h4>
               </div>
             </div>
+
+            <!-- CARD 7 -->
             <div class="property-card">
               <div class="property-image">
-                <img src="./Images/Amberstoneblogbanner.jpeg" alt="Co Evolve" />
+                <img
+                  src="./Images/Amberstoneblogbanner.jpeg"
+                  alt="Amberstone"
+                />
                 <span class="property-badge">Featured</span>
               </div>
 
@@ -297,50 +307,10 @@
                 <h4>90L to 3.5cr</h4>
               </div>
             </div>
-
-            <!-- DUPLICATES FOR LOOP -->
-
-            <div class="property-card">
-              <div class="property-image">
-                <img src="./Images/coevolve-florenza.jpg" alt="Co Evolve" />
-                <span class="property-badge">Featured</span>
-              </div>
-
-              <div class="property-content">
-                <h3>Co Evolve</h3>
-                <p>Bengaluru</p>
-                <h4>80L to 2.5cr</h4>
-              </div>
-            </div>
-
-            <div class="property-card">
-              <div class="property-image">
-                <img src="./Images/Feature-c1-Night.png" alt="Casa Grand" />
-                <span class="property-badge">Featured</span>
-              </div>
-
-              <div class="property-content">
-                <h3>Casa Grand</h3>
-                <p>Bengaluru</p>
-                <h4>79L to 3.5cr</h4>
-              </div>
-            </div>
-
-            <div class="property-card">
-              <div class="property-image">
-                <img
-                  src="./Images/Internal_Road_Side_Evening_View_v01.webp"
-                  alt="Nambiar Builders"
-                />
-                <span class="property-badge">Featured</span>
-              </div>
-
-              <div class="property-content">
-                <h3>Nambiar Builders</h3>
-                <p>Bengaluru</p>
-                <h4>80L to 3.5cr</h4>
-              </div>
-            </div>
+          </div>
+          <div class="slider-controls">
+            <button class="slider-btn prev-btn">&#10094;</button>
+            <button class="slider-btn next-btn">&#10095;</button>
           </div>
         </div>
       </div>
@@ -718,8 +688,8 @@
         <div class="footer-grid">
           <div>
             <div class="logo-footer">
-            <img src="./Images/PrimeSites Logo (Gold - Horizontal).svg" />
-          </div>
+              <img src="./Images/PrimeSites Logo (Gold - Horizontal).svg" />
+            </div>
 
             <p>
               Luxury real estate specialists delivering exceptional results.
@@ -793,33 +763,78 @@
         </div>
       </div>
     </footer>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const mobileBtn = document.getElementById("mobileMenuBtn");
-  const navMenu = document.querySelector(".nav-menu");
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileBtn = document.getElementById("mobileMenuBtn");
+        const navMenu = document.querySelector(".nav-menu");
 
-  mobileBtn.addEventListener("click", function () {
-    navMenu.classList.toggle("active");
-  });
-
-  // Close menu and scroll to section
-  document.querySelectorAll('.nav-menu a[href^="#"]').forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute("href");
-      const targetSection = document.querySelector(targetId);
-
-      if (targetSection) {
-        targetSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
+        mobileBtn.addEventListener("click", function () {
+          navMenu.classList.toggle("active");
         });
-      }
 
-      navMenu.classList.remove("active");
-    });
+        // Close menu and scroll to section
+        document.querySelectorAll('.nav-menu a[href^="#"]').forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+              targetSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+
+            navMenu.classList.remove("active");
+          });
+        });
+      });
+    </script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".property-track");
+  const cards = document.querySelectorAll(".property-card");
+  const nextBtn = document.querySelector(".next-btn");
+  const prevBtn = document.querySelector(".prev-btn");
+
+  const cardWidth = cards[0].offsetWidth + 30;
+
+  let currentIndex = 0;
+
+  function moveSlider() {
+    track.style.transform =
+      `translateX(-${currentIndex * cardWidth}px)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    if (currentIndex < cards.length - 3) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
+    moveSlider();
   });
+
+  prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = cards.length - 3;
+    }
+    moveSlider();
+  });
+
+  // Auto slide every 3 seconds
+  setInterval(() => {
+    if (currentIndex < cards.length - 3) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
+    moveSlider();
+  }, 3000);
 });
 </script>
 

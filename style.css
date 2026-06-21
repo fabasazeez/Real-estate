@@ -617,41 +617,53 @@ h4 {
 
 /* =====================================
    PROPERTIES SECTION
-===================================== */
+=/* ====================================
+   PROPERTIES SECTION
+==================================== */
+
 .properties-section {
   background: var(--black-light);
 }
 
-/* SLIDER WRAPPER */
+/* ====================================
+   SLIDER WRAPPER
+==================================== */
 
 .property-slider {
   width: 100%;
-  overflow: hidden;
-  position: relative;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-/* MOVING TRACK */
+.property-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* ====================================
+   TRACK
+==================================== */
 
 .property-track {
   display: flex;
   gap: 30px;
   width: max-content;
-
-  animation: propertyScroll 30s linear infinite;
 }
 
-.property-track:hover {
-  animation-play-state: paused;
-}
-
-/* CARD */
+/* ====================================
+   CARD
+==================================== */
 
 .property-card {
   width: 380px;
   flex-shrink: 0;
 
   background: #111;
-
   border: 1px solid var(--border);
   border-radius: 18px;
 
@@ -662,9 +674,12 @@ h4 {
 
 .property-card:hover {
   transform: translateY(-10px);
-
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
 }
+
+/* ====================================
+   IMAGE
+==================================== */
 
 .property-image {
   position: relative;
@@ -684,6 +699,10 @@ h4 {
   transform: scale(1.08);
 }
 
+/* ====================================
+   BADGE
+==================================== */
+
 .property-badge {
   position: absolute;
 
@@ -701,6 +720,10 @@ h4 {
   font-weight: 700;
 }
 
+/* ====================================
+   CONTENT
+==================================== */
+
 .property-content {
   padding: 28px;
 }
@@ -715,35 +738,80 @@ h4 {
   margin-bottom: 20px;
 }
 
-.property-meta {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-
-  margin-bottom: 25px;
-
-  color: var(--gold);
-  font-size: 13px;
-}
-
 .property-content h4 {
   font-size: 30px;
   color: var(--gold);
 }
 
-/* AUTO SCROLL */
+/* ====================================
+   BOTTOM CENTER ARROWS
+==================================== */
 
-@keyframes propertyScroll {
-  from {
-    transform: translateX(0);
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 16px;
+
+  margin-top: 40px;
+}
+
+.slider-btn {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #111;
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  color: var(--gold);
+
+  font-size: 24px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+
+  color: #000;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.35);
+}
+
+/* ====================================
+   TABLET
+==================================== */
+
+@media (max-width: 992px) {
+  .property-card {
+    width: 340px;
   }
 
-  to {
-    transform: translateX(calc(-50% - 15px));
+  .property-content h3 {
+    font-size: 28px;
+  }
+
+  .property-content h4 {
+    font-size: 26px;
   }
 }
 
-/* MOBILE */
+/* ====================================
+   MOBILE
+==================================== */
 
 @media (max-width: 768px) {
   .property-track {
@@ -768,6 +836,17 @@ h4 {
 
   .property-content h4 {
     font-size: 22px;
+  }
+
+  .slider-controls {
+    margin-top: 30px;
+    gap: 12px;
+  }
+
+  .slider-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
   }
 }
 /* =====================================
