@@ -195,6 +195,34 @@ h4 {
   border: none;
   cursor: pointer;
 }
+.gold-btns {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold);
+  color: var(--black);
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .gold-btns {
+    display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold);
+  color: var(--black);
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  }
+}
 @media (max-width: 768px) {
   .gold-btn {
   display: none;
@@ -494,29 +522,52 @@ h4 {
 /* =====================================
    PROPERTIES SECTION
 ===================================== */
-
 .properties-section {
   background: var(--black-light);
 }
 
-.property-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 30px;
+/* SLIDER WRAPPER */
+
+.property-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
+/* MOVING TRACK */
+
+.property-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+
+  animation: propertyScroll 30s linear infinite;
+}
+
+.property-track:hover {
+  animation-play-state: paused;
+}
+
+/* CARD */
+
 .property-card {
+  width: 380px;
+  flex-shrink: 0;
+
   background: #111;
+
   border: 1px solid var(--border);
-  overflow: hidden;
   border-radius: 18px;
+
+  overflow: hidden;
+
   transition: var(--transition);
 }
 
 .property-card:hover {
   transform: translateY(-10px);
-  box-shadow:
-    0 25px 60px rgba(0,0,0,.45);
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
 }
 
 .property-image {
@@ -525,9 +576,12 @@ h4 {
 }
 
 .property-image img {
+  width: 100%;
   height: 300px;
+
   object-fit: cover;
-  transition: transform .8s ease;
+
+  transition: transform 0.8s ease;
 }
 
 .property-card:hover img {
@@ -536,12 +590,17 @@ h4 {
 
 .property-badge {
   position: absolute;
+
   top: 20px;
   left: 20px;
+
   background: var(--gold);
-  color: black;
+  color: #000;
+
   padding: 8px 16px;
+
   border-radius: 40px;
+
   font-size: 12px;
   font-weight: 700;
 }
@@ -564,7 +623,9 @@ h4 {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+
   margin-bottom: 25px;
+
   color: var(--gold);
   font-size: 13px;
 }
@@ -574,6 +635,45 @@ h4 {
   color: var(--gold);
 }
 
+/* AUTO SCROLL */
+
+@keyframes propertyScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 15px));
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .property-track {
+    gap: 20px;
+  }
+
+  .property-card {
+    width: 280px;
+  }
+
+  .property-image img {
+    height: 220px;
+  }
+
+  .property-content {
+    padding: 20px;
+  }
+
+  .property-content h3 {
+    font-size: 24px;
+  }
+
+  .property-content h4 {
+    font-size: 22px;
+  }
+}
 /* =====================================
    SERVICES SECTION
 ===================================== */
@@ -789,7 +889,7 @@ h4 {
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 80px;
 }
 
 .contact-info span {
@@ -815,7 +915,7 @@ h4 {
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 32px;
 }
 
 .contact-form input,
